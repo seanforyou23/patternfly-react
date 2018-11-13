@@ -88,6 +88,7 @@
     "test": "yarn lint && jest",
     "test:current": "jest --watch",
     "test:watch": "jest --watchAll",
+    "test:cypress": "cypress open",
     "travis-deploy-once": "travis-deploy-once"
   },
   "jest": {

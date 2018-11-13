@@ -57,15 +57,23 @@ class Navigation extends React.Component {
               <img src={logo} alt="PatternFly Logo" />
             </Link>
           </div>
-          <div className={css(styles.search)}>
-            <input
-              className={css(styles.input)}
-              placeholder="Find components, templates,..."
-              type="text"
-              value={searchValue}
-              onChange={this.handleSearchChange}
-            />
-          </div>
+          <form className={[css(styles.search), 'pf-c-form'].join(' ')} onSubmit={event => { event.preventDefault(); return false; }}>
+            <div className="pf-c-form__group">
+              <label className="pf-c-form__label" htmlFor="primaryComponentSearch">
+                <span className="pf-c-title pf-m-lg">
+                  Search Components
+                </span>
+              </label>
+              <input
+                className={[css(styles.input), 'pf-c-form-control'].join(' ')}
+                placeholder="For example, &quot;button&quot;"
+                type="text"
+                id="primaryComponentSearch"
+                value={searchValue}
+                onChange={this.handleSearchChange}
+              />
+            </div>
+          </form>
           <NavigationItemGroup title="Style">
             <NavigationItem to="/styles/tokens">Tokens</NavigationItem>
             <NavigationItem to="/styles/icons">Icons</NavigationItem>

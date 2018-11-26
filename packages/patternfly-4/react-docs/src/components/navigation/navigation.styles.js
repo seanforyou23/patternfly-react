@@ -27,4 +27,5 @@ export default StyleSheet.create({
   search: {
     margin: spacerMd.var
   }
+  }
 });

@@ -20,8 +20,10 @@ class LoginCardWithValidation extends React.Component {
     },
     isCapsLock: false,
     form: {
-      showError: false,
-      submitError: this.props.submitError
+      showError: this.props.showError,
+      submitError: this.props.submitError,
+      disableSubmit: this.props.disableSubmit,
+      isSubmitting: this.props.isSubmitting
     }
   };
 
@@ -75,19 +77,34 @@ class LoginCardWithValidation extends React.Component {
   onSubmit = e => {
     e.preventDefault();
     if (this.isFormValid()) {
-      const { onSubmit, submitError } = this.props;
-      onSubmit && onSubmit(e);
-      submitError &&
-        this.setState({
-          form: {
-            ...this.state.form,
-            showError: true,
-            error: submitError
-          }
-        });
+      this.onSubmitStart();
+      this.props.onSubmit(e, this.onSubmitError);
     } else {
       this.handleOnInputErrors();
     }
+  };
+
+  onSubmitStart = () => {
+    this.setState({
+      form: {
+        ...this.state.form,
+        disableSubmit: true,
+        isSubmitting: true,
+        showError: false
+      }
+    });
+  };
+
+  onSubmitError = submitError => {
+    this.setState({
+      form: {
+        ...this.state.form,
+        showError: true,
+        submitError,
+        disableSubmit: false,
+        isSubmitting: false
+      }
+    });
   };
 
   getModifiedProps = () => {
@@ -115,7 +132,10 @@ class LoginCardWithValidation extends React.Component {
         showError: this.state.passwordField.showError
       },
       onSubmit: e => this.onSubmit(e),
-      showError: this.state.form.showError
+      showError: this.state.form.showError,
+      disableSubmit: this.state.form.disableSubmit,
+      isSubmitting: this.state.form.isSubmitting,
+      submitError: this.state.form.submitError
     };
   };
 
@@ -142,7 +162,17 @@ class LoginCardWithValidation extends React.Component {
     !this.isPasswordShort() &&
     this.isUserNameValid();
 
-  isPasswordShort = () => this.state.passwordField.value.length < this.props.passwordField.minLength;
+  isPasswordShort = () => {
+    const {
+      passwordField: { minLength: passwordMinLength }
+    } = this.props;
+    const {
+      passwordField: {
+        value: { length: currentPasswordLength }
+      }
+    } = this.state;
+    return passwordMinLength > 0 && currentPasswordLength < passwordMinLength;
+  };
 
   hideSubmitError = () => {
     this.setState({
@@ -205,10 +235,16 @@ class LoginCardWithValidation extends React.Component {
   };
 
   isUserNameValid = () => {
-    const mailAddress = this.state.usernameField.value;
-    const atPos = mailAddress.indexOf('@');
-    const dotPos = mailAddress.lastIndexOf('.');
-    return atPos > 1 && dotPos - atPos > 2 && atPos < dotPos;
+    const {
+      usernameField: { type: userType }
+    } = this.props;
+    if (userType === 'email') {
+      const mailAddress = this.state.usernameField.value;
+      const atPos = mailAddress.indexOf('@');
+      const dotPos = mailAddress.lastIndexOf('.');
+      return atPos > 1 && dotPos - atPos > 2 && atPos < dotPos;
+    }
+    return true;
   };
 
   render() {
@@ -236,7 +272,10 @@ LoginCardWithValidation.propTypes = {
     minLength: PropTypes.number
   }),
   onSubmit: PropTypes.func,
-  submitError: PropTypes.oneOfType([PropTypes.string, PropTypes.node])
+  submitError: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  disableSubmit: PropTypes.bool,
+  isSubmitting: PropTypes.bool,
+  showError: PropTypes.bool
 };
 
 LoginCardWithValidation.defaultProps = {
@@ -244,7 +283,10 @@ LoginCardWithValidation.defaultProps = {
   usernameField: { ...LoginCardInput.defaultProps.usernameField },
   passwordField: { ...LoginCardInput.defaultProps.passwordField },
   onSubmit: e => e.target.submit(),
-  submitError: null
+  submitError: null,
+  disableSubmit: false,
+  isSubmitting: false,
+  showError: false
 };
 
 export default LoginCardWithValidation;

@@ -8,8 +8,9 @@ import { storybookPackageName } from 'storybook/constants/siteConstants';
 import { noop } from 'patternfly-react';
 import { AccessConsoles, VncConsole } from '../index';
 import { SerialConsoleConnector } from '../SerialConsole/SerialConsole.stories'; // contains mock backend
-import { DISCONNECTED } from '../SerialConsole/constants';
-import { SERIAL_CONSOLE_TYPE } from '../common/constants';
+import constants from '../common/constants';
+
+const { DISCONNECTED, SERIAL_CONSOLE_TYPE } = constants;
 
 const stories = storiesOf(`${storybookPackageName(name)}/AccessConsoles`, module);
 
@@ -28,6 +29,21 @@ stories.add(
     return inlineTemplate({
       story,
       title: 'AccessConsoles'
+    });
+  })
+);
+
+stories.add(
+  'AccessConsoles - single',
+  withInfo()(() => {
+    const story = (
+      <AccessConsoles preselectedType={SERIAL_CONSOLE_TYPE}>
+        <SerialConsoleConnector onConnect={noop} onDisconnect={noop} status={DISCONNECTED} type={SERIAL_CONSOLE_TYPE} />
+      </AccessConsoles>
+    );
+    return inlineTemplate({
+      story,
+      title: 'AccessConsoles - single'
     });
   })
 );

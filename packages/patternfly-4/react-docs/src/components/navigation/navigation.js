@@ -14,7 +14,9 @@ import {
 
 const routeShape = PropTypes.shape({
   to: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired
+  label: PropTypes.string.isRequired,
+  pkg: PropTypes.string,
+  components: PropTypes.array
 });
 
 const propTypes = {
@@ -48,9 +50,15 @@ class Navigation extends React.Component {
     const { searchValue } = this.state;
     const searchRE = new RegExp(searchValue, 'i');
 
-    const filteredComponentRoutes = componentRoutes.filter(c => searchRE.test(c.label));
+    const filteredComponentRoutes = componentRoutes.filter(c => {
+      c.filteredComponents = c.components.filter(component => searchRE.test(component.label));
+      return searchRE.test(c.label) || c.filteredComponents.length > 0;
+    });
 
-    const filteredLayoutRoutes = layoutRoutes.filter(c => searchRE.test(c.label));
+    const filteredLayoutRoutes = layoutRoutes.filter(c => {
+      c.filteredComponents = c.components.filter(component => searchRE.test(component.label));
+      return searchRE.test(c.label) || c.filteredComponents.length > 0;
+    });
 
     const filteredDemoRoutes = demoRoutes.filter(c => searchRE.test(c.label));
 
@@ -77,13 +85,18 @@ class Navigation extends React.Component {
             </FormGroup>
           </Form>
           <NavigationItemGroup title="Style">
-            <NavigationItem to="/styles/tokens">Tokens</NavigationItem>
-            <NavigationItem to="/styles/icons">Icons</NavigationItem>
+            <NavigationItem to="/styles/tokens" pkg="tokens">Tokens</NavigationItem>
+            <NavigationItem to="/styles/icons" pkg="icons">Icons</NavigationItem>
           </NavigationItemGroup>
           {Boolean(filteredComponentRoutes.length) && (
             <NavigationItemGroup title="Components">
               {filteredComponentRoutes.map(route => (
-                <NavigationItem key={route.label} to={route.to}>
+                <NavigationItem
+                  key={route.label}
+                  to={route.to}
+                  pkg={route.pkg}
+                  components={route.filteredComponents || route.components}
+                >
                   {route.label}
                 </NavigationItem>
               ))}
@@ -92,7 +105,12 @@ class Navigation extends React.Component {
           {Boolean(filteredLayoutRoutes.length) && (
             <NavigationItemGroup title="Layouts">
               {filteredLayoutRoutes.map(route => (
-                <NavigationItem key={route.label} to={route.to}>
+                <NavigationItem
+                  key={route.label}
+                  to={route.to}
+                  pkg={route.pkg}
+                  components={route.filteredComponents || route.components}
+                >
                   {route.label}
                 </NavigationItem>
               ))}

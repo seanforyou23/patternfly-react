@@ -4,9 +4,10 @@ import { noop } from 'patternfly-react';
 
 import { AccessConsoles } from './index';
 import { SerialConsole } from '../SerialConsole';
-import { SERIAL_CONSOLE_TYPE, VNC_CONSOLE_TYPE } from '../common/constants';
-import { LOADING } from '../SerialConsole/constants';
 import { VncConsole } from '../VncConsole';
+import constants from '../common/constants';
+
+const { SERIAL_CONSOLE_TYPE, VNC_CONSOLE_TYPE, LOADING } = constants;
 
 const MyVncConsoleTestWrapper = () => <p>This can be VncConsole component or a wrapper</p>;
 
@@ -51,6 +52,21 @@ test('AccessConsoles with wrapped SerialConsole as a child', () => {
     </AccessConsoles>
   );
   expect(view).toMatchSnapshot();
+});
+
+test('AccessConsoles with preselected SerialConsole', () => {
+  const wrapper = mount(
+    <AccessConsoles preselectedType={SERIAL_CONSOLE_TYPE}>
+      <SerialConsoleConnected type={SERIAL_CONSOLE_TYPE} />
+    </AccessConsoles>
+  );
+  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.find('SerialConsoleConnected')).toHaveLength(1);
+
+  const button = wrapper.find('button #console-type-selector');
+  expect(button).toHaveLength(1);
+  const consoleItems = wrapper.find('ul li');
+  expect(consoleItems).toHaveLength(1); // single value only
 });
 
 test('AccessConsoles switching SerialConsole and VncConsole', () => {

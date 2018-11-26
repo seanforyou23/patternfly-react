@@ -26,11 +26,5 @@ export default StyleSheet.create({
   },
   search: {
     margin: spacerMd.var
-  },
-  input: {
-    padding: `${spacerSm.var} ${spacerXs.var}`,
-    width: '100%',
-    border: 'none',
-    fontSize: fontSizeXs.var
   }
 });

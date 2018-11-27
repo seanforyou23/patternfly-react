@@ -25,7 +25,7 @@ export default StyleSheet.create({
     padding: `0 ${spacerMd.var}`
   },
   search: {
-    margin: spacerMd.var
-  }
+    margin: `${spacerMd.var} 0`,
+    padding: `0 ${spacerMd.var}`
   }
 });

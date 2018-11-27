@@ -1,8 +1,6 @@
 import { StyleSheet } from '@patternfly/react-styles';
 import {
-  global_FontSize_xs as fontSizeXs,
-  global_spacer_sm as spacerSm,
-  global_spacer_xs as spacerXs,
+  global_FontSize_lg as fontSizeLg,
   global_spacer_md as spacerMd,
   global_BackgroundColor_100 as navBackgroundColor,
   c_nav_Width as sidebarWidth
@@ -30,7 +28,7 @@ export default StyleSheet.create({
       padding: 0 ${spacerMd.var};
     }
     .pf-c-form__label {
-      --pf-c-form__label--FontSize: 18px;
+      --pf-c-form__label--FontSize: ${fontSizeLg.var};
     }
   `
 });

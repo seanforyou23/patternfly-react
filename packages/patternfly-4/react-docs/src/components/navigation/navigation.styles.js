@@ -24,8 +24,13 @@ export default StyleSheet.create({
     margin: `${spacerMd.var} 0`,
     padding: `0 ${spacerMd.var}`
   },
-  search: {
-    margin: `${spacerMd.var} 0`,
-    padding: `0 ${spacerMd.var}`
-  }
+  search: `
+    &.pf-c-form {
+      margin: ${spacerMd.var} 0;
+      padding: 0 ${spacerMd.var};
+    }
+    .pf-c-form__label {
+      --pf-c-form__label--FontSize: 18px;
+    }
+  `
 });

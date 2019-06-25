@@ -12,13 +12,11 @@ import { PopoverFooter } from './PopoverFooter';
 import { PopoverCloseButton } from './PopoverCloseButton';
 import GenerateId from '../../helpers/GenerateId/GenerateId';
 import { c_popover_MaxWidth as popoverMaxWidth } from '@patternfly/react-tokens';
-import { tippyStyles } from '../Tooltip/styles';
 import { ReactElement } from 'react';
 // Can't use ES6 imports :(
 // The types for it are also wrong, we should probably ditch this dependency.
 // tslint:disable-next-line
 const FocusTrap: any = require('focus-trap-react');
-tippyStyles();
 
 export enum PopoverPosition {
   top = 'top',

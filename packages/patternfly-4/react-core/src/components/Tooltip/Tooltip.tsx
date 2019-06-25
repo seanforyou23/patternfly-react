@@ -7,10 +7,7 @@ import { TooltipArrow } from './TooltipArrow';
 import { TooltipContent } from './TooltipContent';
 import { KEY_CODES } from '../../helpers/constants';
 import { c_tooltip_MaxWidth as tooltipMaxWidth } from '@patternfly/react-tokens';
-import { tippyStyles } from './styles';
 import { ReactElement } from 'react';
-
-tippyStyles();
 
 export enum TooltipPosition {
   top = 'top',

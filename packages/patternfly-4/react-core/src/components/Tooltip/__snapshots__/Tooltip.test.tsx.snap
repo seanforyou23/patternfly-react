@@ -1,10 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`tooltip renders 1`] = `
-.pf-tippy {
-  display: block;
-}
-
 <ForwardRef(TippyWrapper)
   animateFill={false}
   animation="scale"

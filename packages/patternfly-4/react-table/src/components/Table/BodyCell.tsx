@@ -10,6 +10,7 @@ export interface BodyCellProps {
   isVisible?: boolean;
   parentId?: number;
   textCenter?: boolean;
+  editable?: boolean;
   isOpen?: boolean;
   ariaControls?: string;
 }
@@ -22,6 +23,7 @@ export const BodyCell: React.FunctionComponent<BodyCellProps> = ({
   isVisible,
   parentId,
   textCenter = false,
+  editable = false,
   isOpen,
   ariaControls = '',
   ...props
@@ -31,7 +33,18 @@ export const BodyCell: React.FunctionComponent<BodyCellProps> = ({
     ...(dataLabel ? { 'data-label': dataLabel } : {}),
     ...props
   };
+  // if (editable) {
+  //   console.log('this cell is editable!');
+  // }
   return (parentId !== undefined && colSpan === undefined) || !isVisible ? null : (
-    <Component {...mappedProps} className={css(className, textCenter && styles.modifiers.center)} colSpan={colSpan} />
+    <Component
+      {...mappedProps}
+      className={
+        css(
+          className,
+          textCenter && styles.modifiers.center,
+          editable && 'editable'
+        )}
+      colSpan={colSpan} />
   );
 };

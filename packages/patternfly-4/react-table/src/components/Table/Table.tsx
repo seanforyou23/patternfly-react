@@ -28,6 +28,14 @@ export type OnSort = (event: React.MouseEvent, columnIndex: number, sortByDirect
 export type OnCollapse = (event: React.MouseEvent, rowIndex: number, isOpen: boolean, rowData: IRowData, extraData: IExtraData) => void;
 export type OnExpand = (event: React.MouseEvent, rowIndex: number, colIndex: number, isOpen: boolean, rowData: IRowData, extraData: IExtraData) => void;
 export type OnSelect = (event: React.MouseEvent, isSelected: boolean, rowIndex: number, rowData: IRowData, extraData: IExtraData) => void;
+// export type OnEditMode = (
+//   event: React.MouseEvent,
+//   // rowIndex: number,
+//   // isInEditMode: boolean,
+//   // rowData: IRowData,
+//   // extraData: IExtraData
+// ) => void;
+export type OnEditMode = (params?: any) => void;
 
 export enum SortByDirection {
   asc = 'asc',
@@ -47,6 +55,7 @@ export interface IColumn {
     onSort?: OnSort;
     onCollapse?: OnCollapse;
     onExpand?: OnExpand;
+    onEditMode?: OnEditMode;
     onSelect?: OnSelect;
     rowLabeledBy?: string;
     expandId?: string;
@@ -113,16 +122,16 @@ export type ITransforms = ((
   column?: IColumn,
   property?: string,
   rowIndex?: number,
-  rowKey?: RowKeyType ) => { className: string; 'aria-sort': string; children: React.ReactNode; })[];
+  rowKey?: RowKeyType) => { className: string; 'aria-sort': string; children: React.ReactNode; })[];
 
 export type IFormatters = ((
-    data?: IFormatterValueType,
-    rowData?: IRowData,
-    columnIndex?: number,
-    column?: IColumn,
-    property?: string,
-    rowIndex?: number,
-    rowKey?: RowKeyType ) => formatterValueType)[];
+  data?: IFormatterValueType,
+  rowData?: IRowData,
+  columnIndex?: number,
+  column?: IColumn,
+  property?: string,
+  rowIndex?: number,
+  rowKey?: RowKeyType) => formatterValueType)[];
 
 export interface ICell {
   title?: string;
@@ -152,6 +161,7 @@ export interface IRow extends RowType {
   noPadding?: boolean;
   showSelect?: boolean;
   isExpanded?: boolean;
+  isInEditMode?: boolean;
   isFirstVisible?: boolean;
   isLastVisible?: boolean;
   selected?: boolean;
@@ -168,6 +178,7 @@ export interface TableProps {
   onCollapse?: OnCollapse;
   onExpand?: OnExpand;
   onSelect?: OnSelect;
+  onEditMode?: OnEditMode;
   onSort?: OnSort;
   actions?: IActions;
   actionResolver?: IActionsResolver;
@@ -184,6 +195,7 @@ export interface TableProps {
   bodyWrapper?: Function;
   rowWrapper?: Function;
   role?: string;
+  editableRows?: boolean;
 }
 
 export const TableContext = React.createContext({
@@ -207,7 +219,11 @@ export class Table extends React.Component<TableProps, {}> {
     "caption": undefined as React.ReactNode,
     'aria-label': undefined as string,
     "gridBreakPoint": TableGridBreakpoint.gridMd,
-    "role": 'grid'
+    "role": 'grid',
+    "editableRows": false,
+    "onEditMode": () => {
+      console.log('default onEditMode!');
+    }
   };
 
   isSelected = (row: IRow) => row.selected === true;
@@ -235,6 +251,7 @@ export class Table extends React.Component<TableProps, {}> {
       areActionsDisabled,
       onCollapse,
       onExpand,
+      onEditMode,
       rowLabeledBy,
       dropdownPosition,
       dropdownDirection,
@@ -247,6 +264,7 @@ export class Table extends React.Component<TableProps, {}> {
       rowWrapper,
       borders,
       role,
+      editableRows,
       ...props
     } = this.props;
 
@@ -255,12 +273,26 @@ export class Table extends React.Component<TableProps, {}> {
       console.error('Table: Specify at least one of: header, caption, aria-label');
     }
 
+    let derivedActions = [];
+
+    if (editableRows) {
+      derivedActions.push({
+          title: 'Edit',
+          onClick: (event: React.MouseEvent, rowId: number, rowData: IRow, extra: IExtraData) => {
+            onEditMode(rowId);
+          }
+        });
+    }
+
     const headerData = calculateColumns(cells, {
       sortBy,
       onSort,
       onSelect,
       allRowsSelected: onSelect ? this.areAllRowsSelected(rows as IRow[]) : false,
-      actions,
+      actions: [
+        ...actions,
+        ...derivedActions
+      ],
       actionResolver,
       areActionsDisabled,
       onCollapse,

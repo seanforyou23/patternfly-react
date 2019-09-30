@@ -4,6 +4,7 @@ export { cellActions } from './decorators/cellActions';
 export { cellWidth } from './decorators/cellWidth';
 export { wrappable } from './decorators/wrappable';
 export { textCenter } from './decorators/textCenter';
+export { editable } from './decorators/editable';
 export { collapsible, expandedRow, expandable } from './decorators/collapsible';
 export { compoundExpand } from './decorators/compoundExpand';
 export { headerCol } from './decorators/headerCol';

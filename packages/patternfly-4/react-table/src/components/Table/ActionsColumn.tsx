@@ -47,7 +47,7 @@ export class ActionsColumn extends React.Component<ActionsColumnProps, ActionsCo
   }
 
   onSelect = (event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent,
-              onClick: ((event: React.MouseEvent, rowIndex: number | undefined, rowData: IRowData, extraData: IExtraData) => void) | undefined): void => {
+    onClick: ((event: React.MouseEvent, rowIndex: number | undefined, rowData: IRowData, extraData: IExtraData) => void) | undefined): void => {
     const { rowData, extraData } = this.props;
     event.preventDefault();
     // tslint:disable-next-line:no-unused-expression
@@ -68,19 +68,21 @@ export class ActionsColumn extends React.Component<ActionsColumnProps, ActionsCo
           direction={dropdownDirection}
           isOpen={isOpen}
           dropdownItems={items.map(
-            ({ title, itemKey, onClick, isSeparator, ...props }, key) =>
-              isSeparator ? (
+            ({ title, itemKey, onClick, isSeparator, ...props }, key) => {
+
+              return isSeparator ? (
                 <DropdownSeparator {...props} key={itemKey || key} data-key={itemKey || key} />
               ) : (
-                <DropdownItem
-                  onClick={(event) => this.onSelect(event, onClick)}
-                  {...props}
-                  key={itemKey || key}
-                  data-key={itemKey || key}
-                >
-                  {title}
-                </DropdownItem>
-              )
+                  <DropdownItem
+                    onClick={(event) => this.onSelect(event, onClick)}
+                    {...props}
+                    key={itemKey || key}
+                    data-key={itemKey || key}
+                  >
+                    {title}
+                  </DropdownItem>
+                )
+            }
           )}
           isPlain
         />

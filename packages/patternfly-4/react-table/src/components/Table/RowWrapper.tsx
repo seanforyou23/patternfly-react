@@ -5,8 +5,9 @@ import { css } from '@patternfly/react-styles';
 
 // legacy export now, RowWrapperRow can simply be typed as IRow in the future
 export interface RowWrapperRow {
-  isOpen?: Boolean;
-  isExpanded?: Boolean;
+  isOpen?: boolean;
+  isExpanded?: boolean;
+  isInEditMode?: boolean;
 }
 
 export interface RowWrapperProps {
@@ -15,7 +16,7 @@ export interface RowWrapperProps {
   onScroll?: React.UIEventHandler;
   onResize?: React.UIEventHandler;
   row?: RowWrapperRow;
-  rowProps?: Object;
+  rowProps?: object;
 }
 
 export class RowWrapper extends React.Component<RowWrapperProps, {}> {
@@ -23,7 +24,8 @@ export class RowWrapper extends React.Component<RowWrapperProps, {}> {
     className: '' as string,
     row: {
       isOpen: undefined as boolean,
-      isExpanded: undefined as boolean
+      isExpanded: undefined as boolean,
+      isInEditMode: undefined as boolean
     } as RowWrapperRow,
     rowProps: null as any
   };
@@ -80,10 +82,12 @@ export class RowWrapper extends React.Component<RowWrapperProps, {}> {
       className,
       onScroll,
       onResize,
-      row: { isExpanded },
+      row: { isExpanded, isInEditMode },
       rowProps,
       ...props
     } = this.props;
+
+    // console.log(rowProps);
 
     return (
       <tr
@@ -92,7 +96,8 @@ export class RowWrapper extends React.Component<RowWrapperProps, {}> {
         className={css(
           className,
           isExpanded !== undefined && styles.tableExpandableRow,
-          isExpanded && styles.modifiers.expanded
+          isExpanded && styles.modifiers.expanded,
+          isInEditMode && 'row-in-edit-mode'
         )}
         hidden={isExpanded !== undefined && !isExpanded}
       />

@@ -15,7 +15,7 @@ export interface RowWrapperProps {
   onScroll?: React.UIEventHandler;
   onResize?: React.UIEventHandler;
   row?: RowWrapperRow;
-  rowProps?: Object;
+  rowProps?: object;
 }
 
 class RowWrapper extends React.Component<RowWrapperProps & InjectedOuiaProps, {}> {

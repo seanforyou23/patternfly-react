@@ -66,11 +66,12 @@ export class BodyRow extends React.Component<BodyRowProps, {}> {
           // tslint:disable-next-line:no-console
           console.warn('Table.Body - Failed to receive a transformed result');
         }
+        console.log('new key for expandable rows', `column-${columnIndex}-row-${rowIndex}-cell`);
 
         return React.createElement(
           renderers.cell as createElementType,
           {
-            key: `${columnIndex}-cell`,
+            key: `column-${columnIndex}-row-${rowIndex}-cell`,
             ...mergeProps(props, cell && cell.props, transformed)
           },
           transformed.children ||

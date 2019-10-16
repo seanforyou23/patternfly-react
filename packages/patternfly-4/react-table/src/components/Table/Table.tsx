@@ -136,7 +136,11 @@ export type ITransforms = ((
   property?: string,
   rowIndex?: number,
   rowKey?: RowKeyType
-) => { className: string; 'aria-sort': string; children: React.ReactNode })[];
+) => {
+  className: string;
+  'aria-sort': string;
+  children: React.ReactNode
+})[];
 
 export type IFormatters = ((
   data?: IFormatterValueType,

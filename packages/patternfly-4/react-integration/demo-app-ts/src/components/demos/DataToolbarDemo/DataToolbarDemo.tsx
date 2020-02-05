@@ -7,7 +7,7 @@ import {
   DataToolbarToggleGroup,
   DataToolbarGroup,
   DataToolbarProps
-} from '@patternfly/react-core/dist/esm/experimental';
+} from '@patternfly/react-core/dist/esm/beta';
 import {
   Button,
   ButtonVariant,

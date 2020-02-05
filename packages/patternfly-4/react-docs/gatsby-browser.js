@@ -16,7 +16,7 @@ import '@patternfly/patternfly/patternfly.css';
 // Utilities
 import '@patternfly/patternfly/patternfly-addons.css';
 
-// Experimental components
+// Beta components
 import '@patternfly/patternfly/components/Drawer/drawer.css';
 import '@patternfly/patternfly/components/InlineEdit/inline-edit.css';
 import '@patternfly/patternfly/components/NotificationDrawer/notification-drawer.css';

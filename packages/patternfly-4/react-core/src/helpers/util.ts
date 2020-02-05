@@ -1,7 +1,7 @@
 import * as ReactDOM from 'react-dom';
 import { SIDE } from './constants';
 import { getModifier } from '@patternfly/react-styles';
-import { DataToolbarBreakpointMod } from '../experimental/components/DataToolbar/DataToolbarUtils';
+import { DataToolbarBreakpointMod } from '../beta/components/DataToolbar/DataToolbarUtils';
 import { FlexBreakpointMod, FlexItemBreakpointMod } from '../layouts/Flex/FlexUtils';
 
 export function capitalize(input: string) {

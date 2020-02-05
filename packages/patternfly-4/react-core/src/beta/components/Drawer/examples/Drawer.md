@@ -3,16 +3,16 @@ title: 'Drawer'
 cssPrefix: 'pf-c-drawer'
 typescript: true
 propComponents: ['Drawer', 'DrawerPanelContent', 'DrawerContent']
-section: 'experimental'
-experimentalStage: 'early'
+section: 'beta'
+betaStage: 'early'
 ---
-import { Drawer, DrawerPanelContent, DrawerContent } from '@patternfly/react-core/dist/esm/experimental';
+import { Drawer, DrawerPanelContent, DrawerContent } from '@patternfly/react-core/dist/esm/beta';
 import { Alert } from '@patternfly/react-core';
 
 ## Examples
 ```js title=Basic
 import React, { ReactFragment } from 'react';
-import { Drawer, DrawerPanelContent, DrawerContent } from '@patternfly/react-core/dist/esm/experimental';
+import { Drawer, DrawerPanelContent, DrawerContent } from '@patternfly/react-core/dist/esm/beta';
 import { Button } from '@patternfly/react-core';
 
 class SimpleDrawer extends React.Component {
@@ -23,7 +23,7 @@ class SimpleDrawer extends React.Component {
       isExpanded: false
     };
 
-    this.onClick = () => { 
+    this.onClick = () => {
       const isExpanded = !this.state.isExpanded;
       this.setState({
         isExpanded
@@ -49,7 +49,7 @@ class SimpleDrawer extends React.Component {
 
 ```js title=Basic-inline
 import React, { ReactFragment } from 'react';
-import { Drawer, DrawerPanelContent, DrawerContent } from '@patternfly/react-core/dist/esm/experimental';
+import { Drawer, DrawerPanelContent, DrawerContent } from '@patternfly/react-core/dist/esm/beta';
 import { Button } from '@patternfly/react-core';
 
 class SimpleDrawerInlineContent extends React.Component {
@@ -60,7 +60,7 @@ class SimpleDrawerInlineContent extends React.Component {
       isExpanded: false
     };
 
-    this.onClick = () => { 
+    this.onClick = () => {
       const isExpanded = !this.state.isExpanded;
       this.setState({
         isExpanded

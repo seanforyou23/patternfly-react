@@ -1,5 +1,5 @@
 import React from 'react';
-import { Drawer, DrawerPanelContent, DrawerContent, DrawerProps } from '@patternfly/react-core/dist/esm/experimental/';
+import { Drawer, DrawerPanelContent, DrawerContent, DrawerProps } from '@patternfly/react-core/dist/esm/beta/';
 import { Button } from '@patternfly/react-core';
 
 export interface DrawerDemoState {

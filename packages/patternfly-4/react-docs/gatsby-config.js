@@ -18,7 +18,7 @@ module.exports = {
             { section: 'charts' },
             { section: 'components' },
             { section: 'demos' },
-            { section: 'experimental' },
+            { section: 'beta' },
             { section: 'extensions' },
             { section: 'layouts' },
           ]

@@ -1,7 +1,7 @@
 {
   "name": "@patternfly/react-styled-system",
   "version": "3.7.27",
-  "description": "Experimental: Styled System package with PatternFly 4 theming",
+  "description": "Beta: Styled System package with PatternFly 4 theming",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/js/index.d.ts",

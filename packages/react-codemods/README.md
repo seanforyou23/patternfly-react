@@ -1,6 +1,6 @@
 # @patternfly/react-codemods
 
-_PatternFly React codemods are currently experimental only._
+_PatternFly React codemods are currently beta only._
 
 This repository contains a collection of codemod scripts for use with
 [JSCodeshift](https://github.com/facebook/jscodeshift) that help update Patternfly React projects.

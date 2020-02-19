@@ -39,6 +39,16 @@ test('isDisabled', () => {
   expect(view).toMatchSnapshot();
 });
 
+test('isDisabledFocusable button', () => {
+  const view = mount(<Button isDisabledFocusable>Disabled yet focusable button</Button>);
+  expect(view).toMatchSnapshot();
+});
+
+test('isDisabledFocusable link button', () => {
+  const view = mount(<Button isDisabledFocusable component="a">Disabled yet focusable button</Button>);
+  expect(view).toMatchSnapshot();
+});
+
 test('isFocus', () => {
   const view = mount(<Button isFocus>Focused Button</Button>);
   expect(view).toMatchSnapshot();

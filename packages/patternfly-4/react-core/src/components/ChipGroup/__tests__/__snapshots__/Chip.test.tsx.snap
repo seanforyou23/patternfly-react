@@ -106,7 +106,6 @@ exports[`Chip closable 1`] = `
                     disabled={false}
                     id="remove_pf-random-id-1"
                     onClick={[Function]}
-                    tabIndex={null}
                     type="button"
                   >
                     <TimesCircleIcon
@@ -254,7 +253,6 @@ exports[`Chip closable with tooltip 1`] = `
                     disabled={false}
                     id="remove_pf-random-id-2"
                     onClick={[Function]}
-                    tabIndex={null}
                     type="button"
                   >
                     <TimesCircleIcon
@@ -382,7 +380,6 @@ exports[`Chip overflow 1`] = `
                     className="pf-c-button pf-m-plain"
                     disabled={false}
                     onClick={[Function]}
-                    tabIndex={null}
                     type="button"
                   >
                     <span
@@ -500,7 +497,6 @@ exports[`ChipButton 1`] = `
           disabled={false}
           id="my-chip-button"
           onClick={[Function]}
-          tabIndex={null}
           type="button"
         >
           <b>

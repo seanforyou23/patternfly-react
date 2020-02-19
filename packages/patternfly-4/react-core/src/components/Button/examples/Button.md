@@ -5,7 +5,7 @@ cssPrefix: 'pf-c-button'
 typescript: true
 propComponents: ['Button']
 ---
-import { Button } from '@patternfly/react-core';
+import { Button, Tooltip } from '@patternfly/react-core';
 import { TimesIcon, PlusCircleIcon } from '@patternfly/react-icons';
 
 ## Examples
@@ -47,18 +47,46 @@ import { TimesIcon, PlusCircleIcon } from '@patternfly/react-icons';
 
 LinkButton = () => (
   <React.Fragment>
-    <Button component="a" href="https://pf-next.com/" target="_blank" variant="primary">
+    <Button component="a" href="https://pf4.patternfly.org/" target="_blank" variant="primary">
       Link to Core Docs
     </Button>{' '}
-    <Button component="a" href="https://pf-next.com/" target="_blank" variant="secondary">
+    <Button component="a" href="https://pf4.patternfly.org/" target="_blank" variant="secondary">
       Secondary Link to Core Docs
     </Button>{' '}
-    <Button component="a" isDisabled href="https://pf-next.com/" target="_blank" variant="tertiary">
+    <Button component="a" isDisabled href="https://pf4.patternfly.org/" target="_blank" variant="tertiary">
       Tertiary Link to Core Docs
     </Button>
     <Button component="a" href="https://pf4.patternfly.org/contribution/#modifiers" variant="link">
      Jump to modifiers in contribution guidelines
     </Button>
   </React.Fragment>
+);
+```
+
+```js title=Disabled--focusable-button-with-tooltip
+import React from 'react';
+import { Button } from '@patternfly/react-core';
+import { TimesIcon, PlusCircleIcon, Tooltip } from '@patternfly/react-icons';
+
+DisabledFocusableBtnWithTooltip = () => (
+  <Tooltip content="Disabled and focusable button with tooltip">
+    <Button isDisabledFocusable variant="tertiary" onKeyPress={() => {alert('KeyPress')}} onClick={() => {alert('Click')}}>
+      Tertiary Link to Core Docs
+    </Button>
+  </Tooltip>
+);
+```
+
+```js title=Disabled-focusable-link-button-with-tooltip
+import React from 'react';
+import { Button } from '@patternfly/react-core';
+import { TimesIcon, PlusCircleIcon, Tooltip } from '@patternfly/react-icons';
+
+DisabledFocusableLinkBtnWithTooltip = () => (
+  <Tooltip content="Disabled and focusable link button with tooltip">
+    <Button component="a" isDisabledFocusable href="https://pf4.patternfly.org/" target="_blank" variant="tertiary">
+      Tertiary Link to Core Docs
+    </Button>
+  </Tooltip>
 );
 ```

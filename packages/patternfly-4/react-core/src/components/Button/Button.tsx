@@ -46,8 +46,10 @@ export interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
   'aria-label'?: string;
   /** Icon for the button if variant is a link */
   icon?: React.ReactNode | null;
-  /** Set button tab index unless component is not a button and is disabled */
+  /** Sets the button tabindex. */
   tabIndex?: number;
+  /** Sets button in a visually disabled state, while allowing keyboard focus. */
+  isDisabledFocusable?: boolean;
 }
 
 const Button: React.FunctionComponent<ButtonProps & InjectedOuiaProps> = ({
@@ -57,6 +59,7 @@ const Button: React.FunctionComponent<ButtonProps & InjectedOuiaProps> = ({
   isActive = false,
   isBlock = false,
   isDisabled = false,
+  isDisabledFocusable = null,
   isFocus = false,
   isHover = false,
   isInline = false,
@@ -66,29 +69,45 @@ const Button: React.FunctionComponent<ButtonProps & InjectedOuiaProps> = ({
   icon = null,
   ouiaContext = null,
   ouiaId = null,
-  tabIndex = null as number,
+  tabIndex = null,
   ...props
 }: ButtonProps & InjectedOuiaProps) => {
   const Component = component as any;
   const isButtonElement = Component === 'button';
+  const preventDefaultActions = {
+    onKeyPress: (event: Event) => {
+      event.preventDefault();
+    },
+    onClick: (event: Event) => {
+      event.preventDefault();
+    }
+  };
+  const getDefaultTabIdx = (btnIsDisabled: boolean, btnIsDisabledFocusable: boolean, btnUsesBtnElement: boolean) => {
+    if (btnIsDisabled) {
+      return btnUsesBtnElement ? null : -1;
+    } else if (btnIsDisabledFocusable) {
+      return null;
+    }
+  };
   return (
     <Component
       {...props}
-      aria-disabled={isButtonElement ? null : isDisabled}
+      {...(isDisabledFocusable ? preventDefaultActions : null)}
+      aria-disabled={isDisabled || isDisabledFocusable}
       aria-label={ariaLabel}
       className={css(
         styles.button,
         getModifier(styles.modifiers, variant),
         isBlock && styles.modifiers.block,
-        isDisabled && !isButtonElement && styles.modifiers.disabled,
+        (isDisabled || isDisabledFocusable) && styles.modifiers.disabled,
         isActive && styles.modifiers.active,
         isFocus && styles.modifiers.focus,
         isHover && styles.modifiers.hover,
         isInline && variant === ButtonVariant.link && styles.modifiers.inline,
         className
       )}
-      disabled={isButtonElement ? isDisabled : null}
-      tabIndex={isDisabled && !isButtonElement ? -1 : tabIndex}
+      disabled={isButtonElement && !isDisabledFocusable ? isDisabled : null}
+      tabIndex={tabIndex !== null ? tabIndex : getDefaultTabIdx(isDisabled, isDisabledFocusable, isButtonElement)}
       type={isButtonElement ? type : null}
       {...(ouiaContext.isOuia && {
         'data-ouia-component-type': 'Button',

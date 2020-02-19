@@ -88,7 +88,6 @@ exports[`TopologySideBar should display topology sidebar w/ close correctly 1`] 
             className="pf-c-button pf-m-plain pf-topology-side-bar__dismiss"
             disabled={false}
             onClick={[MockFunction]}
-            tabIndex={null}
             type="button"
           >
             <TimesIcon

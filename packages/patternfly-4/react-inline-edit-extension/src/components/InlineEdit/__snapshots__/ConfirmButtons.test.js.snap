@@ -82,7 +82,6 @@ exports[`ConfirmButtons renders correctly 1`] = `
               className="pf-c-button pf-m-primary"
               disabled={false}
               onMouseUp={[MockFunction]}
-              tabIndex={null}
               type="button"
             >
               <CheckIcon
@@ -161,7 +160,6 @@ exports[`ConfirmButtons renders correctly 1`] = `
               className="pf-c-button pf-m-plain"
               disabled={false}
               onMouseUp={[MockFunction]}
-              tabIndex={null}
               type="button"
             >
               <CloseIcon

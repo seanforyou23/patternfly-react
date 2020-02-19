@@ -585,7 +585,6 @@ exports[`alertgroup closes when alerts are closed 1`] = `
                               className="pf-c-button pf-m-plain"
                               disabled={false}
                               onClick={[MockFunction]}
-                              tabIndex={null}
                               type="button"
                             >
                               <TimesIcon

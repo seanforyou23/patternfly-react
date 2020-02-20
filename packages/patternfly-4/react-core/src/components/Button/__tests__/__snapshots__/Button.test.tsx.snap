@@ -31,6 +31,7 @@ exports[`aria-disabled is set to true and tabIndex to -1 if component is not a b
         aria-label={null}
         className="pf-c-button pf-m-primary pf-m-disabled"
         disabled={null}
+        style={null}
         tabIndex={-1}
         type={null}
       >
@@ -75,6 +76,7 @@ exports[`control button 1`] = `
         aria-label="control"
         className="pf-c-button pf-m-control"
         disabled={false}
+        style={null}
         type="button"
       >
         control
@@ -119,6 +121,7 @@ exports[`danger button 1`] = `
         aria-label="danger"
         className="pf-c-button pf-m-danger"
         disabled={false}
+        style={null}
         type="button"
       >
         danger
@@ -157,6 +160,7 @@ exports[`isBlock 1`] = `
         aria-label={null}
         className="pf-c-button pf-m-primary pf-m-block"
         disabled={false}
+        style={null}
         type="button"
       >
         Block Button
@@ -194,6 +198,7 @@ exports[`isDisabled 1`] = `
         aria-label={null}
         className="pf-c-button pf-m-primary pf-m-disabled"
         disabled={true}
+        style={null}
         tabIndex={null}
         type="button"
       >
@@ -234,6 +239,11 @@ exports[`isDisabledFocusable button 1`] = `
         disabled={null}
         onClick={[Function]}
         onKeyPress={[Function]}
+        style={
+          Object {
+            "pointerEvents": "auto",
+          }
+        }
         tabIndex={null}
         type="button"
       >
@@ -277,6 +287,11 @@ exports[`isDisabledFocusable link button 1`] = `
         disabled={null}
         onClick={[Function]}
         onKeyPress={[Function]}
+        style={
+          Object {
+            "pointerEvents": "auto",
+          }
+        }
         tabIndex={null}
         type={null}
       >
@@ -315,6 +330,7 @@ exports[`isFocus 1`] = `
         aria-label={null}
         className="pf-c-button pf-m-primary pf-m-focus"
         disabled={false}
+        style={null}
         type="button"
       >
         Focused Button
@@ -352,6 +368,7 @@ exports[`isHover 1`] = `
         aria-label={null}
         className="pf-c-button pf-m-primary pf-m-hover"
         disabled={false}
+        style={null}
         type="button"
       >
         Hovered Button
@@ -392,6 +409,7 @@ exports[`isInline 1`] = `
         aria-label={null}
         className="pf-c-button pf-m-link pf-m-inline"
         disabled={false}
+        style={null}
         type="button"
       >
         Hovered Button
@@ -435,6 +453,7 @@ exports[`link button 1`] = `
         aria-label="link"
         className="pf-c-button pf-m-link"
         disabled={false}
+        style={null}
         type="button"
       >
         link
@@ -495,6 +514,7 @@ exports[`link with icon 1`] = `
         aria-label={null}
         className="pf-c-button pf-m-link"
         disabled={false}
+        style={null}
         type="button"
       >
         <span
@@ -568,6 +588,7 @@ exports[`plain button 1`] = `
         aria-label="plain"
         className="pf-c-button pf-m-plain"
         disabled={false}
+        style={null}
         type="button"
       >
         plain
@@ -612,6 +633,7 @@ exports[`primary button 1`] = `
         aria-label="primary"
         className="pf-c-button pf-m-primary"
         disabled={false}
+        style={null}
         type="button"
       >
         primary
@@ -656,6 +678,7 @@ exports[`secondary button 1`] = `
         aria-label="secondary"
         className="pf-c-button pf-m-secondary"
         disabled={false}
+        style={null}
         type="button"
       >
         secondary
@@ -700,6 +723,7 @@ exports[`tertiary button 1`] = `
         aria-label="tertiary"
         className="pf-c-button pf-m-tertiary"
         disabled={false}
+        style={null}
         type="button"
       >
         tertiary

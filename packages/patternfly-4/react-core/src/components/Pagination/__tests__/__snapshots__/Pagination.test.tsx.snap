@@ -672,6 +672,7 @@ exports[`component render custom pagination toggle 1`] = `
                     data-action="first"
                     disabled={true}
                     onClick={[Function]}
+                    style={null}
                     tabIndex={null}
                     type="button"
                   >
@@ -756,6 +757,7 @@ exports[`component render custom pagination toggle 1`] = `
                     data-action="previous"
                     disabled={true}
                     onClick={[Function]}
+                    style={null}
                     tabIndex={null}
                     type="button"
                   >
@@ -861,6 +863,7 @@ exports[`component render custom pagination toggle 1`] = `
                     data-action="next"
                     disabled={false}
                     onClick={[Function]}
+                    style={null}
                     type="button"
                   >
                     <AngleRightIcon
@@ -944,6 +947,7 @@ exports[`component render custom pagination toggle 1`] = `
                     data-action="last"
                     disabled={false}
                     onClick={[Function]}
+                    style={null}
                     type="button"
                   >
                     <AngleDoubleRightIcon
@@ -1566,6 +1570,7 @@ exports[`component render custom perPageOptions 1`] = `
                     data-action="first"
                     disabled={true}
                     onClick={[Function]}
+                    style={null}
                     tabIndex={null}
                     type="button"
                   >
@@ -1650,6 +1655,7 @@ exports[`component render custom perPageOptions 1`] = `
                     data-action="previous"
                     disabled={true}
                     onClick={[Function]}
+                    style={null}
                     tabIndex={null}
                     type="button"
                   >
@@ -1755,6 +1761,7 @@ exports[`component render custom perPageOptions 1`] = `
                     data-action="next"
                     disabled={false}
                     onClick={[Function]}
+                    style={null}
                     type="button"
                   >
                     <AngleRightIcon
@@ -1838,6 +1845,7 @@ exports[`component render custom perPageOptions 1`] = `
                     data-action="last"
                     disabled={false}
                     onClick={[Function]}
+                    style={null}
                     type="button"
                   >
                     <AngleDoubleRightIcon
@@ -2603,6 +2611,7 @@ exports[`component render custom start end 1`] = `
                     data-action="first"
                     disabled={false}
                     onClick={[Function]}
+                    style={null}
                     type="button"
                   >
                     <AngleDoubleLeftIcon
@@ -2686,6 +2695,7 @@ exports[`component render custom start end 1`] = `
                     data-action="previous"
                     disabled={false}
                     onClick={[Function]}
+                    style={null}
                     type="button"
                   >
                     <AngleLeftIcon
@@ -2790,6 +2800,7 @@ exports[`component render custom start end 1`] = `
                     data-action="next"
                     disabled={false}
                     onClick={[Function]}
+                    style={null}
                     type="button"
                   >
                     <AngleRightIcon
@@ -2873,6 +2884,7 @@ exports[`component render custom start end 1`] = `
                     data-action="last"
                     disabled={false}
                     onClick={[Function]}
+                    style={null}
                     type="button"
                   >
                     <AngleDoubleRightIcon
@@ -3193,6 +3205,7 @@ exports[`component render empty per page options 1`] = `
                     data-action="first"
                     disabled={true}
                     onClick={[Function]}
+                    style={null}
                     tabIndex={null}
                     type="button"
                   >
@@ -3277,6 +3290,7 @@ exports[`component render empty per page options 1`] = `
                     data-action="previous"
                     disabled={true}
                     onClick={[Function]}
+                    style={null}
                     tabIndex={null}
                     type="button"
                   >
@@ -3382,6 +3396,7 @@ exports[`component render empty per page options 1`] = `
                     data-action="next"
                     disabled={false}
                     onClick={[Function]}
+                    style={null}
                     type="button"
                   >
                     <AngleRightIcon
@@ -3465,6 +3480,7 @@ exports[`component render empty per page options 1`] = `
                     data-action="last"
                     disabled={false}
                     onClick={[Function]}
+                    style={null}
                     type="button"
                   >
                     <AngleDoubleRightIcon
@@ -4230,6 +4246,7 @@ exports[`component render last page 1`] = `
                     data-action="first"
                     disabled={false}
                     onClick={[Function]}
+                    style={null}
                     type="button"
                   >
                     <AngleDoubleLeftIcon
@@ -4313,6 +4330,7 @@ exports[`component render last page 1`] = `
                     data-action="previous"
                     disabled={false}
                     onClick={[Function]}
+                    style={null}
                     type="button"
                   >
                     <AngleLeftIcon
@@ -4417,6 +4435,7 @@ exports[`component render last page 1`] = `
                     data-action="next"
                     disabled={true}
                     onClick={[Function]}
+                    style={null}
                     tabIndex={null}
                     type="button"
                   >
@@ -4501,6 +4520,7 @@ exports[`component render last page 1`] = `
                     data-action="last"
                     disabled={true}
                     onClick={[Function]}
+                    style={null}
                     tabIndex={null}
                     type="button"
                   >
@@ -5264,6 +5284,7 @@ exports[`component render limited number of pages 1`] = `
                     data-action="first"
                     disabled={true}
                     onClick={[Function]}
+                    style={null}
                     tabIndex={null}
                     type="button"
                   >
@@ -5348,6 +5369,7 @@ exports[`component render limited number of pages 1`] = `
                     data-action="previous"
                     disabled={true}
                     onClick={[Function]}
+                    style={null}
                     tabIndex={null}
                     type="button"
                   >
@@ -5453,6 +5475,7 @@ exports[`component render limited number of pages 1`] = `
                     data-action="next"
                     disabled={true}
                     onClick={[Function]}
+                    style={null}
                     tabIndex={null}
                     type="button"
                   >
@@ -5537,6 +5560,7 @@ exports[`component render limited number of pages 1`] = `
                     data-action="last"
                     disabled={true}
                     onClick={[Function]}
+                    style={null}
                     tabIndex={null}
                     type="button"
                   >
@@ -6300,6 +6324,7 @@ exports[`component render no items 1`] = `
                     data-action="first"
                     disabled={true}
                     onClick={[Function]}
+                    style={null}
                     tabIndex={null}
                     type="button"
                   >
@@ -6384,6 +6409,7 @@ exports[`component render no items 1`] = `
                     data-action="previous"
                     disabled={true}
                     onClick={[Function]}
+                    style={null}
                     tabIndex={null}
                     type="button"
                   >
@@ -6489,6 +6515,7 @@ exports[`component render no items 1`] = `
                     data-action="next"
                     disabled={true}
                     onClick={[Function]}
+                    style={null}
                     tabIndex={null}
                     type="button"
                   >
@@ -6573,6 +6600,7 @@ exports[`component render no items 1`] = `
                     data-action="last"
                     disabled={true}
                     onClick={[Function]}
+                    style={null}
                     tabIndex={null}
                     type="button"
                   >
@@ -7314,6 +7342,7 @@ exports[`component render should render correctly bottom 1`] = `
                     data-action="first"
                     disabled={true}
                     onClick={[Function]}
+                    style={null}
                     tabIndex={null}
                     type="button"
                   >
@@ -7398,6 +7427,7 @@ exports[`component render should render correctly bottom 1`] = `
                     data-action="previous"
                     disabled={true}
                     onClick={[Function]}
+                    style={null}
                     tabIndex={null}
                     type="button"
                   >
@@ -7503,6 +7533,7 @@ exports[`component render should render correctly bottom 1`] = `
                     data-action="next"
                     disabled={false}
                     onClick={[Function]}
+                    style={null}
                     type="button"
                   >
                     <AngleRightIcon
@@ -7586,6 +7617,7 @@ exports[`component render should render correctly bottom 1`] = `
                     data-action="last"
                     disabled={false}
                     onClick={[Function]}
+                    style={null}
                     type="button"
                   >
                     <AngleDoubleRightIcon
@@ -8348,6 +8380,7 @@ exports[`component render should render correctly compact 1`] = `
                     data-action="previous"
                     disabled={true}
                     onClick={[Function]}
+                    style={null}
                     tabIndex={null}
                     type="button"
                   >
@@ -8432,6 +8465,7 @@ exports[`component render should render correctly compact 1`] = `
                     data-action="next"
                     disabled={false}
                     onClick={[Function]}
+                    style={null}
                     type="button"
                   >
                     <AngleRightIcon
@@ -9197,6 +9231,7 @@ exports[`component render should render correctly disabled 1`] = `
                     data-action="first"
                     disabled={true}
                     onClick={[Function]}
+                    style={null}
                     tabIndex={null}
                     type="button"
                   >
@@ -9281,6 +9316,7 @@ exports[`component render should render correctly disabled 1`] = `
                     data-action="previous"
                     disabled={true}
                     onClick={[Function]}
+                    style={null}
                     tabIndex={null}
                     type="button"
                   >
@@ -9386,6 +9422,7 @@ exports[`component render should render correctly disabled 1`] = `
                     data-action="next"
                     disabled={true}
                     onClick={[Function]}
+                    style={null}
                     tabIndex={null}
                     type="button"
                   >
@@ -9470,6 +9507,7 @@ exports[`component render should render correctly disabled 1`] = `
                     data-action="last"
                     disabled={true}
                     onClick={[Function]}
+                    style={null}
                     tabIndex={null}
                     type="button"
                   >
@@ -10230,6 +10268,7 @@ exports[`component render should render correctly top 1`] = `
                     data-action="first"
                     disabled={true}
                     onClick={[Function]}
+                    style={null}
                     tabIndex={null}
                     type="button"
                   >
@@ -10314,6 +10353,7 @@ exports[`component render should render correctly top 1`] = `
                     data-action="previous"
                     disabled={true}
                     onClick={[Function]}
+                    style={null}
                     tabIndex={null}
                     type="button"
                   >
@@ -10419,6 +10459,7 @@ exports[`component render should render correctly top 1`] = `
                     data-action="next"
                     disabled={false}
                     onClick={[Function]}
+                    style={null}
                     type="button"
                   >
                     <AngleRightIcon
@@ -10502,6 +10543,7 @@ exports[`component render should render correctly top 1`] = `
                     data-action="last"
                     disabled={false}
                     onClick={[Function]}
+                    style={null}
                     type="button"
                   >
                     <AngleDoubleRightIcon
@@ -11279,6 +11321,7 @@ exports[`component render titles 1`] = `
                     data-action="first"
                     disabled={true}
                     onClick={[Function]}
+                    style={null}
                     tabIndex={null}
                     type="button"
                   >
@@ -11363,6 +11406,7 @@ exports[`component render titles 1`] = `
                     data-action="previous"
                     disabled={true}
                     onClick={[Function]}
+                    style={null}
                     tabIndex={null}
                     type="button"
                   >
@@ -11468,6 +11512,7 @@ exports[`component render titles 1`] = `
                     data-action="next"
                     disabled={false}
                     onClick={[Function]}
+                    style={null}
                     type="button"
                   >
                     <AngleRightIcon
@@ -11551,6 +11596,7 @@ exports[`component render titles 1`] = `
                     data-action="last"
                     disabled={false}
                     onClick={[Function]}
+                    style={null}
                     type="button"
                   >
                     <AngleDoubleRightIcon
@@ -12313,6 +12359,7 @@ exports[`component render up drop direction 1`] = `
                     data-action="first"
                     disabled={true}
                     onClick={[Function]}
+                    style={null}
                     tabIndex={null}
                     type="button"
                   >
@@ -12397,6 +12444,7 @@ exports[`component render up drop direction 1`] = `
                     data-action="previous"
                     disabled={true}
                     onClick={[Function]}
+                    style={null}
                     tabIndex={null}
                     type="button"
                   >
@@ -12502,6 +12550,7 @@ exports[`component render up drop direction 1`] = `
                     data-action="next"
                     disabled={false}
                     onClick={[Function]}
+                    style={null}
                     type="button"
                   >
                     <AngleRightIcon
@@ -12585,6 +12634,7 @@ exports[`component render up drop direction 1`] = `
                     data-action="last"
                     disabled={false}
                     onClick={[Function]}
+                    style={null}
                     type="button"
                   >
                     <AngleDoubleRightIcon
@@ -13347,6 +13397,7 @@ exports[`component render zero results 1`] = `
                     data-action="first"
                     disabled={true}
                     onClick={[Function]}
+                    style={null}
                     tabIndex={null}
                     type="button"
                   >
@@ -13431,6 +13482,7 @@ exports[`component render zero results 1`] = `
                     data-action="previous"
                     disabled={true}
                     onClick={[Function]}
+                    style={null}
                     tabIndex={null}
                     type="button"
                   >
@@ -13536,6 +13588,7 @@ exports[`component render zero results 1`] = `
                     data-action="next"
                     disabled={true}
                     onClick={[Function]}
+                    style={null}
                     tabIndex={null}
                     type="button"
                   >
@@ -13620,6 +13673,7 @@ exports[`component render zero results 1`] = `
                     data-action="last"
                     disabled={true}
                     onClick={[Function]}
+                    style={null}
                     tabIndex={null}
                     type="button"
                   >

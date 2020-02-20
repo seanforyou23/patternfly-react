@@ -90,6 +90,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                         className="pf-c-button pf-m-plain"
                         disabled={false}
                         onClick={[Function]}
+                        style={null}
                         type="button"
                       >
                         <FilterIcon
@@ -652,6 +653,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                                               disabled={false}
                                                               id="remove_pf-random-id-1"
                                                               onClick={[Function]}
+                                                              style={null}
                                                               type="button"
                                                             >
                                                               <TimesCircleIcon
@@ -796,6 +798,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                                               disabled={false}
                                                               id="remove_pf-random-id-2"
                                                               onClick={[Function]}
+                                                              style={null}
                                                               type="button"
                                                             >
                                                               <TimesCircleIcon
@@ -1363,6 +1366,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                                               disabled={false}
                                                               id="remove_pf-random-id-4"
                                                               onClick={[Function]}
+                                                              style={null}
                                                               type="button"
                                                             >
                                                               <TimesCircleIcon
@@ -1543,6 +1547,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                               className="pf-c-button pf-m-link pf-m-inline"
                               disabled={false}
                               onClick={[Function]}
+                              style={null}
                               type="button"
                             >
                               Clear all filters
@@ -1781,6 +1786,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                     className="pf-c-button pf-m-link pf-m-inline"
                     disabled={false}
                     onClick={[Function]}
+                    style={null}
                     type="button"
                   >
                     Clear all filters
@@ -1866,6 +1872,7 @@ exports[`data toolbar DataToolbarItemsAndGroups 1`] = `
                             aria-label={null}
                             className="pf-c-button pf-m-plain"
                             disabled={false}
+                            style={null}
                             type="button"
                           >
                             <EditIcon
@@ -1936,6 +1943,7 @@ exports[`data toolbar DataToolbarItemsAndGroups 1`] = `
                             aria-label={null}
                             className="pf-c-button pf-m-plain"
                             disabled={false}
+                            style={null}
                             type="button"
                           >
                             <CloneIcon
@@ -2251,6 +2259,7 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                         className="pf-c-button pf-m-plain"
                         disabled={false}
                         onClick={[Function]}
+                        style={null}
                         type="button"
                       >
                         <FilterIcon

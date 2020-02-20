@@ -50,6 +50,24 @@ describe('Button Demo Test', () => {
     cy.get('.tippy-popper').should('be.visible');
   });
 
+  it('Verify disabled yet focusable button has tooltip when hovered', () => {
+    cy.get('.btn-demo-area').within(() => {
+      cy.get('.pf-c-button:nth-of-type(11)')
+        .trigger('mouseover')
+        .should('have.attr', 'aria-describedby', 'tippy-1');
+    });
+    cy.get('.tippy-popper').should('be.visible');
+  });
+
+  it('Verify disabled yet focusable button prevents default actions', () => {
+    cy.get('.btn-demo-area').within(() => {
+      cy.get('.pf-c-button:nth-of-type(11)')
+        .focus()
+        .click();
+      cy.url().should('eq', 'http://localhost:3000/button-demo-nav-link'); // shouldn't have navigated anywhere
+    });
+  });
+
   it('Verify link button classes and attributes', () => {
     cy.get('.btn-demo-area').within(() => {
       cy.get('.pf-c-button:nth-of-type(12)').should('have.class', 'pf-m-link');
@@ -98,9 +116,27 @@ describe('Button Demo Test', () => {
       cy.get('a.pf-c-button:nth-of-type(5)')
         .should('have.attr', 'aria-disabled', 'true')
         .and('have.class', 'pf-m-disabled');
+    });
+  });
+
+  it('Verify disabled yet focusable link as button has tooltip when focused', () => {
+    cy.get('.btn-demo-area').within(() => {
       cy.get('a.pf-c-button:nth-of-type(5)')
         .focus()
         .should('have.attr', 'aria-describedby', 'tippy-2');
+    });
+  });
+
+  it('Verify disabled yet focusable link as button has tooltip when hovered', () => {
+    cy.get('.btn-demo-area').within(() => {
+      cy.get('a.pf-c-button:nth-of-type(5)')
+        .trigger('mouseover')
+        .should('have.attr', 'aria-describedby', 'tippy-2');
+    });
+  });
+
+  it('Verify disabled yet focusable link as button prevents default actions', () => {
+    cy.get('.btn-demo-area').within(() => {
       cy.get('a.pf-c-button:nth-of-type(5)')
         .focus()
         .click();

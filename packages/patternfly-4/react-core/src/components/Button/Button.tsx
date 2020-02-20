@@ -95,6 +95,7 @@ const Button: React.FunctionComponent<ButtonProps & InjectedOuiaProps> = ({
       {...(isDisabledFocusable ? preventDefaultActions : null)}
       aria-disabled={isDisabled || isDisabledFocusable}
       aria-label={ariaLabel}
+      style={isDisabledFocusable ? { pointerEvents: 'auto' } : null}
       className={css(
         styles.button,
         getModifier(styles.modifiers, variant),

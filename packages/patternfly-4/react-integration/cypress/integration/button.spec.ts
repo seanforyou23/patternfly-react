@@ -17,6 +17,11 @@ describe('Button Demo Test', () => {
     });
   });
 
+  it('Checks that incrementing tabindex values send focus to the correct elements', () => {
+    // cy.get('body').tab();
+    cy.focused().should('have.attr', 'tabindex', '2');
+  });
+
   it('Verify disabled button classes and attributes', () => {
     cy.get('.btn-demo-area').within(() => {
       cy.get('.pf-c-button:nth-of-type(8)').should('have.class', 'pf-m-disabled');

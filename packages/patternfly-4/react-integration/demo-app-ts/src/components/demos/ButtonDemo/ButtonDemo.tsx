@@ -62,8 +62,8 @@ export class ButtonDemo extends React.Component {
         <Button {...this.normalButton} isDisabledFocusable>
           Disabled and focusable button
         </Button>
-        <Button {...this.normalButton} tabIndex={2}>
-          Button with tabindex set to 2
+        <Button data-tabindex-4 {...this.normalButton} tabIndex={4}>
+          Button with tabindex set to 4
         </Button>
         <Tooltip content="This tooltip content is available to the disabled button">
           <Button
@@ -100,8 +100,8 @@ export class ButtonDemo extends React.Component {
         <Button {...this.linkAsButton} isDisabledFocusable>
           Disabled focusable link as button
         </Button>
-        <Button {...this.linkAsButton} tabIndex={4}>
-          Link as button with tabindex set to 4
+        <Button data-tabindex-2 {...this.linkAsButton} tabIndex={2}>
+          Link as button with tabindex set to 2
         </Button>
         <Tooltip content="This tooltip content is available to the disabled link as button">
           <Button {...this.linkAsButton} isDisabledFocusable>

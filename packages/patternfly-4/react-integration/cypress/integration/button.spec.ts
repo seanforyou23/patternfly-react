@@ -18,8 +18,14 @@ describe('Button Demo Test', () => {
   });
 
   it('Checks that incrementing tabindex values send focus to the correct elements', () => {
-    // cy.get('body').tab();
+    // @ts-ignore
+    cy.get('body').tab();
     cy.focused().should('have.attr', 'tabindex', '2');
+    cy.focused().should('have.attr', 'data-tabindex-2');
+    // @ts-ignore
+    cy.focused().tab();
+    cy.focused().should('have.attr', 'tabindex', '4');
+    cy.focused().should('have.attr', 'data-tabindex-4');
   });
 
   it('Verify disabled button classes and attributes', () => {
@@ -42,7 +48,7 @@ describe('Button Demo Test', () => {
 
   it('Verify button can set explicit tabindex attribute', () => {
     cy.get('.btn-demo-area').within(() => {
-      cy.get('.pf-c-button:nth-of-type(10)').should('have.attr', 'tabindex', '2');
+      cy.get('.pf-c-button:nth-of-type(10)').should('have.attr', 'tabindex', '4');
     });
   });
 
@@ -116,7 +122,7 @@ describe('Button Demo Test', () => {
       cy.get('a.pf-c-button:nth-of-type(3)').click();
       cy.url().should('eq', 'http://localhost:3000/button-demo-nav-link'); // shouldn't have navigated anywhere
 
-      cy.get('a:nth-of-type(4)').should('have.attr', 'tabindex', '4');
+      cy.get('a:nth-of-type(4)').should('have.attr', 'tabindex', '2');
 
       cy.get('a.pf-c-button:nth-of-type(5)')
         .should('have.attr', 'aria-disabled', 'true')

@@ -49,15 +49,15 @@ export interface SelectProps
   /** Adds accessible text to Select */
   'aria-label'?: string;
   /** Id of label for the Select aria-labelledby */
-  ariaLabelledBy?: string;
+  'aria-labelledby'?: string;
   /** Label for input field of type ahead select variants */
-  ariaLabelTypeAhead?: string;
+  typeAheadAriaLabel?: string;
   /** Label for clear selection button of type ahead select variants */
-  ariaLabelClear?: string;
+  clearSelectionsAriaLabel?: string;
   /** Label for toggle of type ahead select variants */
-  ariaLabelToggle?: string;
+  toggleAriaLabel?: string;
   /** Label for remove chip button of multiple type ahead select variant */
-  ariaLabelRemove?: string;
+  removeSelectionAriaLabel?: string;
   /** Callback for selection behavior */
   onSelect?: (
     event: React.MouseEvent | React.ChangeEvent,
@@ -111,11 +111,11 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
     isDisabled: false,
     isCreatable: false,
     'aria-label': '',
-    ariaLabelledBy: '',
-    ariaLabelTypeAhead: '',
-    ariaLabelClear: 'Clear all',
-    ariaLabelToggle: 'Options menu',
-    ariaLabelRemove: 'Remove',
+    'aria-labelledby': '',
+    typeAheadAriaLabel: '',
+    clearSelectionsAriaLabel: 'Clear all',
+    toggleAriaLabel: 'Options menu',
+    removeSelectionAriaLabel: 'Remove',
     selections: '',
     createText: 'Create',
     placeholderText: '',
@@ -355,12 +355,12 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
       isDisabled,
       isCreatable,
       selections,
-      ariaLabelledBy,
-      ariaLabelTypeAhead,
-      ariaLabelClear,
-      ariaLabelToggle,
-      ariaLabelRemove,
+      typeAheadAriaLabel,
+      clearSelectionsAriaLabel,
+      toggleAriaLabel,
+      removeSelectionAriaLabel,
       'aria-label': ariaLabel,
+      'aria-labelledby': ariaLabelledBy,
       placeholderText,
       width,
       maxHeight,
@@ -395,7 +395,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
           this.clearSelection(e);
           onClear(e);
         }}
-        aria-label={ariaLabelClear}
+        aria-label={clearSelectionsAriaLabel}
         type="button"
         disabled={isDisabled}
       >
@@ -409,7 +409,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
         <ChipGroup>
           {selections &&
             (selections as string[]).map(item => (
-              <Chip key={item} onClick={e => onSelect(e, item)} closeBtnAriaLabel={ariaLabelRemove}>
+              <Chip key={item} onClick={e => onSelect(e, item)} closeBtnAriaLabel={removeSelectionAriaLabel}>
                 {this.getDisplay(item, 'node')}
               </Chip>
             ))}
@@ -471,9 +471,9 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
             onToggle={onToggle}
             onEnter={this.onEnter}
             onClose={this.onClose}
-            ariaLabelledBy={`${ariaLabelledBy || ''} ${selectToggleId}`}
             variant={variant}
-            ariaLabelToggle={ariaLabelToggle}
+            aria-labelledby={`${ariaLabelledBy || ''} ${selectToggleId}`}
+            aria-label={toggleAriaLabel}
             handleTypeaheadKeys={this.handleTypeaheadKeys}
             isDisabled={isDisabled}
             hasClearButton={hasOnClear}
@@ -515,7 +515,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
                     className={css(formStyles.formControl, styles.selectToggleTypeahead)}
                     aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
                     id={`${selectToggleId}-select-typeahead`}
-                    aria-label={ariaLabelTypeAhead}
+                    aria-label={typeAheadAriaLabel}
                     placeholder={placeholderText as string}
                     value={
                       typeaheadInputValue !== null
@@ -542,7 +542,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
                     className={css(formStyles.formControl, styles.selectToggleTypeahead)}
                     aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
                     id={`${selectToggleId}-select-multi-typeahead-typeahead`}
-                    aria-label={ariaLabelTypeAhead}
+                    aria-label={typeAheadAriaLabel}
                     placeholder={placeholderText as string}
                     value={typeaheadInputValue !== null ? typeaheadInputValue : ''}
                     type="text"

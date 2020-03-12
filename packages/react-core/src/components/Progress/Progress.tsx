@@ -2,6 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Progress/progress';
 import { css, getModifier } from '@patternfly/react-styles';
 import { ProgressContainer, ProgressMeasureLocation, ProgressVariant } from './ProgressContainer';
+import { AriaProps } from './ProgressBar';
 import { getUniqueId } from '../../helpers/util';
 import { Omit } from '../../helpers/typeUtils';
 
@@ -74,7 +75,7 @@ export class Progress extends React.Component<ProgressProps> {
       ...(valueText ? { 'aria-valuetext': valueText } : { 'aria-describedby': `${this.id}-description` })
     };
 
-    const ariaProps: { [k: string]: any } = {
+    const progressBarAriaProps: AriaProps = {
       'aria-describedby': `${this.id}-description`,
       'aria-valuemin': min,
       'aria-valuenow': value,
@@ -82,7 +83,7 @@ export class Progress extends React.Component<ProgressProps> {
     };
 
     if (valueText) {
-      ariaProps['aria-valuetext'] = valueText;
+      progressBarAriaProps['aria-valuetext'] = valueText;
     }
 
     const scaledValue = Math.min(100, Math.max(0, Math.floor(((value - min) / (max - min)) * 100)));
@@ -107,7 +108,7 @@ export class Progress extends React.Component<ProgressProps> {
           label={label}
           variant={variant}
           measureLocation={measureLocation}
-          ariaProps={ariaProps}
+          progressBarAriaProps={progressBarAriaProps}
         />
       </div>
     );

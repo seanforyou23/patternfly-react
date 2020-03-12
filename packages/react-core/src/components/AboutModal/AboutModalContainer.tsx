@@ -34,9 +34,9 @@ export interface AboutModalContainerProps extends React.HTMLProps<HTMLDivElement
   /** the URL of the image for the background.  */
   backgroundImageSrc?: string;
   /** id to use for About Modal Box aria labeled by  */
-  ariaLabelledbyId: string;
+  'aria-labelledby': string;
   /** id to use for About Modal Box aria described by  */
-  ariaDescribedById: string;
+  'aria-describedby': string;
 }
 
 export const AboutModalContainer: React.FunctionComponent<AboutModalContainerProps> = ({
@@ -49,8 +49,8 @@ export const AboutModalContainer: React.FunctionComponent<AboutModalContainerPro
   brandImageSrc,
   brandImageAlt,
   backgroundImageSrc,
-  ariaLabelledbyId,
-  ariaDescribedById,
+  'aria-labelledby': ariaLabelledBy,
+  'aria-describedby': ariaDescribedBy,
   ...props
 }: AboutModalContainerProps) => {
   if (!isOpen) {
@@ -59,13 +59,13 @@ export const AboutModalContainer: React.FunctionComponent<AboutModalContainerPro
   return (
     <Backdrop>
       <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }} className={css(styles.bullseye)}>
-        <AboutModalBox className={className} aria-labelledby={ariaLabelledbyId} aria-describedby={ariaDescribedById}>
+        <AboutModalBox className={className} aria-labelledby={ariaLabelledBy} aria-describedby={ariaDescribedBy}>
           <AboutModalBoxBrand src={brandImageSrc} alt={brandImageAlt} />
           <AboutModalBoxCloseButton onClose={onClose} />
-          {productName && <AboutModalBoxHeader id={ariaLabelledbyId} productName={productName} />}
+          {productName && <AboutModalBoxHeader id={ariaLabelledBy} productName={productName} />}
           <AboutModalBoxContent
             trademark={trademark}
-            id={ariaDescribedById}
+            id={ariaDescribedBy}
             noAboutModalBoxContentContainer={false}
             {...props}
           >

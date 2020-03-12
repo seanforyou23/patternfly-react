@@ -39,7 +39,7 @@ export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>
   /** Tooltip message to display when clicking the copy button */
   clickTip?: string;
   /** Custom flag to show that the input requires an associated id or aria-label. */
-  textAriaLabel?: string;
+  inputAriaLabel?: string;
   /** Custom flag to show that the toggle button requires an associated id or aria-label. */
   toggleAriaLabel?: string;
   /** Flag to show if the input is read only. */
@@ -93,7 +93,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
     switchDelay: 2000,
     onCopy: clipboardCopyFunc,
     onChange: (): any => undefined,
-    textAriaLabel: 'Copyable input',
+    inputAriaLabel: 'Copyable input',
     toggleAriaLabel: 'Show content'
   };
 
@@ -131,7 +131,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
       onCopy,
       hoverTip,
       clickTip,
-      textAriaLabel,
+      inputAriaLabel,
       toggleAriaLabel,
       variant,
       position,
@@ -165,7 +165,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
                   onChange={this.updateText}
                   value={this.state.text as string | number}
                   id={`text-input-${id}`}
-                  aria-label={textAriaLabel}
+                  aria-label={inputAriaLabel}
                 />
                 <ClipboardCopyButton
                   exitDelay={exitDelay}

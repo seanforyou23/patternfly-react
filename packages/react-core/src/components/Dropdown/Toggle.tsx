@@ -40,7 +40,7 @@ export interface ToggleProps {
   /** Style the toggle as a child of a split button */
   isSplitButton?: boolean;
   /** Flag for aria popup */
-  ariaHasPopup?: boolean | 'listbox' | 'menu' | 'dialog' | 'grid' | 'listbox' | 'tree';
+  'aria-haspopup'?: boolean | 'listbox' | 'menu' | 'dialog' | 'grid' | 'tree';
   /** Allows selecting toggle to select parent */
   bubbleEvent?: boolean;
 }
@@ -130,7 +130,7 @@ export class Toggle extends React.Component<ToggleProps> {
       isPlain,
       isPrimary,
       isSplitButton,
-      ariaHasPopup,
+      'aria-haspopup': ariaHasPopup,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       bubbleEvent,
       onToggle,

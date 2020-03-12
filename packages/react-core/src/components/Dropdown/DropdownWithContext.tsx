@@ -104,7 +104,7 @@ class DropdownWithContext extends React.Component<DropdownProps & InjectedOuiaPr
                   isOpen,
                   id,
                   isPlain,
-                  ariaHasPopup,
+                  'aria-haspopup': ariaHasPopup,
                   onEnter: () => this.onEnter()
                 })
               )}

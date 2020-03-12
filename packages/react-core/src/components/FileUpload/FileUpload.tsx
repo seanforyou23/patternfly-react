@@ -49,8 +49,6 @@ export interface FileUploadProps
   'aria-label'?: string;
   /** Placeholder string to display in the empty filename field */
   filenamePlaceholder?: string;
-  /** Aria-label for the read-only filename field */
-  filenameAriaLabel?: string;
   /** Text for the Browse button */
   browseButtonText?: string;
   /** Text for the Clear button */

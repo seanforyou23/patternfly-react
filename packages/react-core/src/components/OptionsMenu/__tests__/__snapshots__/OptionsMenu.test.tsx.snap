@@ -198,7 +198,7 @@ exports[`optionsMenu expanded 1`] = `
           id="expanded"
         >
           <OptionsMenuToggle
-            ariaHasPopup={true}
+            aria-haspopup={true}
             id="pf-toggle-id-4"
             isOpen={true}
             isPlain={false}
@@ -212,8 +212,9 @@ exports[`optionsMenu expanded 1`] = `
                 >
                   <button
                     aria-expanded="true"
-                    aria-haspopup="listbox"
+                    aria-haspopup="true"
                     aria-label="Options menu"
+                    ariahaspopup="listbox"
                     class="pf-c-options-menu__toggle"
                     id="expanded-toggle"
                     type="button"
@@ -362,6 +363,7 @@ exports[`optionsMenu expanded 1`] = `
           >
             <DropdownToggle
               aria-expanded={true}
+              aria-haspopup={true}
               aria-label="Options menu"
               ariaHasPopup="listbox"
               id="expanded-toggle"
@@ -380,8 +382,9 @@ exports[`optionsMenu expanded 1`] = `
                   >
                     <button
                       aria-expanded="true"
-                      aria-haspopup="listbox"
+                      aria-haspopup="true"
                       aria-label="Options menu"
+                      ariahaspopup="listbox"
                       class="pf-c-options-menu__toggle"
                       id="expanded-toggle"
                       type="button"
@@ -530,6 +533,7 @@ exports[`optionsMenu expanded 1`] = `
             >
               <Toggle
                 aria-expanded={true}
+                aria-haspopup={true}
                 aria-label="Options menu"
                 ariaHasPopup="listbox"
                 bubbleEvent={false}
@@ -553,8 +557,9 @@ exports[`optionsMenu expanded 1`] = `
                     >
                       <button
                         aria-expanded="true"
-                        aria-haspopup="listbox"
+                        aria-haspopup="true"
                         aria-label="Options menu"
+                        ariahaspopup="listbox"
                         class="pf-c-options-menu__toggle"
                         id="expanded-toggle"
                         type="button"
@@ -703,8 +708,9 @@ exports[`optionsMenu expanded 1`] = `
               >
                 <button
                   aria-expanded={true}
-                  aria-haspopup="listbox"
+                  aria-haspopup={true}
                   aria-label="Options menu"
+                  ariaHasPopup="listbox"
                   className="pf-c-options-menu__toggle"
                   disabled={false}
                   id="expanded-toggle"
@@ -1338,7 +1344,7 @@ exports[`optionsMenu isDisabled 1`] = `
           id="disabled"
         >
           <OptionsMenuToggle
-            ariaHasPopup={true}
+            aria-haspopup={true}
             id="pf-toggle-id-7"
             isDisabled={true}
             isOpen={false}
@@ -1353,8 +1359,9 @@ exports[`optionsMenu isDisabled 1`] = `
                 >
                   <button
                     aria-expanded="false"
-                    aria-haspopup="listbox"
+                    aria-haspopup="true"
                     aria-label="Options menu"
+                    ariahaspopup="listbox"
                     class="pf-c-options-menu__toggle"
                     disabled=""
                     id="disabled-toggle"
@@ -1385,6 +1392,7 @@ exports[`optionsMenu isDisabled 1`] = `
           >
             <DropdownToggle
               aria-expanded={false}
+              aria-haspopup={true}
               aria-label="Options menu"
               ariaHasPopup="listbox"
               id="disabled-toggle"
@@ -1403,8 +1411,9 @@ exports[`optionsMenu isDisabled 1`] = `
                   >
                     <button
                       aria-expanded="false"
-                      aria-haspopup="listbox"
+                      aria-haspopup="true"
                       aria-label="Options menu"
+                      ariahaspopup="listbox"
                       class="pf-c-options-menu__toggle"
                       disabled=""
                       id="disabled-toggle"
@@ -1435,6 +1444,7 @@ exports[`optionsMenu isDisabled 1`] = `
             >
               <Toggle
                 aria-expanded={false}
+                aria-haspopup={true}
                 aria-label="Options menu"
                 ariaHasPopup="listbox"
                 bubbleEvent={false}
@@ -1458,8 +1468,9 @@ exports[`optionsMenu isDisabled 1`] = `
                     >
                       <button
                         aria-expanded="false"
-                        aria-haspopup="listbox"
+                        aria-haspopup="true"
                         aria-label="Options menu"
+                        ariahaspopup="listbox"
                         class="pf-c-options-menu__toggle"
                         disabled=""
                         id="disabled-toggle"
@@ -1490,8 +1501,9 @@ exports[`optionsMenu isDisabled 1`] = `
               >
                 <button
                   aria-expanded={false}
-                  aria-haspopup="listbox"
+                  aria-haspopup={true}
                   aria-label="Options menu"
+                  ariaHasPopup="listbox"
                   className="pf-c-options-menu__toggle"
                   disabled={true}
                   id="disabled-toggle"
@@ -1739,7 +1751,7 @@ exports[`optionsMenu open up 1`] = `
           id="openUp"
         >
           <OptionsMenuToggle
-            ariaHasPopup={true}
+            aria-haspopup={true}
             id="pf-toggle-id-2"
             isOpen={false}
             isPlain={false}
@@ -1753,8 +1765,9 @@ exports[`optionsMenu open up 1`] = `
                 >
                   <button
                     aria-expanded="false"
-                    aria-haspopup="listbox"
+                    aria-haspopup="true"
                     aria-label="Options menu"
+                    ariahaspopup="listbox"
                     class="pf-c-options-menu__toggle"
                     id="openUp-toggle"
                     type="button"
@@ -1784,6 +1797,7 @@ exports[`optionsMenu open up 1`] = `
           >
             <DropdownToggle
               aria-expanded={false}
+              aria-haspopup={true}
               aria-label="Options menu"
               ariaHasPopup="listbox"
               id="openUp-toggle"
@@ -1802,8 +1816,9 @@ exports[`optionsMenu open up 1`] = `
                   >
                     <button
                       aria-expanded="false"
-                      aria-haspopup="listbox"
+                      aria-haspopup="true"
                       aria-label="Options menu"
+                      ariahaspopup="listbox"
                       class="pf-c-options-menu__toggle"
                       id="openUp-toggle"
                       type="button"
@@ -1833,6 +1848,7 @@ exports[`optionsMenu open up 1`] = `
             >
               <Toggle
                 aria-expanded={false}
+                aria-haspopup={true}
                 aria-label="Options menu"
                 ariaHasPopup="listbox"
                 bubbleEvent={false}
@@ -1856,8 +1872,9 @@ exports[`optionsMenu open up 1`] = `
                     >
                       <button
                         aria-expanded="false"
-                        aria-haspopup="listbox"
+                        aria-haspopup="true"
                         aria-label="Options menu"
+                        ariahaspopup="listbox"
                         class="pf-c-options-menu__toggle"
                         id="openUp-toggle"
                         type="button"
@@ -1887,8 +1904,9 @@ exports[`optionsMenu open up 1`] = `
               >
                 <button
                   aria-expanded={false}
-                  aria-haspopup="listbox"
+                  aria-haspopup={true}
                   aria-label="Options menu"
+                  ariaHasPopup="listbox"
                   className="pf-c-options-menu__toggle"
                   disabled={false}
                   id="openUp-toggle"
@@ -2136,7 +2154,7 @@ exports[`optionsMenu plain 1`] = `
           id="plain"
         >
           <OptionsMenuToggle
-            ariaHasPopup={true}
+            aria-haspopup={true}
             id="pf-toggle-id-5"
             isOpen={false}
             isPlain={true}
@@ -2150,8 +2168,9 @@ exports[`optionsMenu plain 1`] = `
                 >
                   <button
                     aria-expanded="false"
-                    aria-haspopup="listbox"
+                    aria-haspopup="true"
                     aria-label="Options menu"
+                    ariahaspopup="listbox"
                     class="pf-c-options-menu__toggle pf-m-plain"
                     id="plain-toggle"
                     type="button"
@@ -2164,6 +2183,7 @@ exports[`optionsMenu plain 1`] = `
           >
             <DropdownToggle
               aria-expanded={false}
+              aria-haspopup={true}
               aria-label="Options menu"
               ariaHasPopup="listbox"
               iconComponent={null}
@@ -2183,8 +2203,9 @@ exports[`optionsMenu plain 1`] = `
                   >
                     <button
                       aria-expanded="false"
-                      aria-haspopup="listbox"
+                      aria-haspopup="true"
                       aria-label="Options menu"
+                      ariahaspopup="listbox"
                       class="pf-c-options-menu__toggle pf-m-plain"
                       id="plain-toggle"
                       type="button"
@@ -2197,6 +2218,7 @@ exports[`optionsMenu plain 1`] = `
             >
               <Toggle
                 aria-expanded={false}
+                aria-haspopup={true}
                 aria-label="Options menu"
                 ariaHasPopup="listbox"
                 bubbleEvent={false}
@@ -2220,8 +2242,9 @@ exports[`optionsMenu plain 1`] = `
                     >
                       <button
                         aria-expanded="false"
-                        aria-haspopup="listbox"
+                        aria-haspopup="true"
                         aria-label="Options menu"
+                        ariahaspopup="listbox"
                         class="pf-c-options-menu__toggle pf-m-plain"
                         id="plain-toggle"
                         type="button"
@@ -2234,8 +2257,9 @@ exports[`optionsMenu plain 1`] = `
               >
                 <button
                   aria-expanded={false}
-                  aria-haspopup="listbox"
+                  aria-haspopup={true}
                   aria-label="Options menu"
+                  ariaHasPopup="listbox"
                   className="pf-c-options-menu__toggle pf-m-plain"
                   disabled={false}
                   id="plain-toggle"
@@ -2452,7 +2476,7 @@ exports[`optionsMenu regular 1`] = `
           id="regular"
         >
           <OptionsMenuToggle
-            ariaHasPopup={true}
+            aria-haspopup={true}
             id="pf-toggle-id-0"
             isOpen={false}
             isPlain={false}
@@ -2466,8 +2490,9 @@ exports[`optionsMenu regular 1`] = `
                 >
                   <button
                     aria-expanded="false"
-                    aria-haspopup="listbox"
+                    aria-haspopup="true"
                     aria-label="Options menu"
+                    ariahaspopup="listbox"
                     class="pf-c-options-menu__toggle"
                     id="regular-toggle"
                     type="button"
@@ -2497,6 +2522,7 @@ exports[`optionsMenu regular 1`] = `
           >
             <DropdownToggle
               aria-expanded={false}
+              aria-haspopup={true}
               aria-label="Options menu"
               ariaHasPopup="listbox"
               id="regular-toggle"
@@ -2515,8 +2541,9 @@ exports[`optionsMenu regular 1`] = `
                   >
                     <button
                       aria-expanded="false"
-                      aria-haspopup="listbox"
+                      aria-haspopup="true"
                       aria-label="Options menu"
+                      ariahaspopup="listbox"
                       class="pf-c-options-menu__toggle"
                       id="regular-toggle"
                       type="button"
@@ -2546,6 +2573,7 @@ exports[`optionsMenu regular 1`] = `
             >
               <Toggle
                 aria-expanded={false}
+                aria-haspopup={true}
                 aria-label="Options menu"
                 ariaHasPopup="listbox"
                 bubbleEvent={false}
@@ -2569,8 +2597,9 @@ exports[`optionsMenu regular 1`] = `
                     >
                       <button
                         aria-expanded="false"
-                        aria-haspopup="listbox"
+                        aria-haspopup="true"
                         aria-label="Options menu"
+                        ariahaspopup="listbox"
                         class="pf-c-options-menu__toggle"
                         id="regular-toggle"
                         type="button"
@@ -2600,8 +2629,9 @@ exports[`optionsMenu regular 1`] = `
               >
                 <button
                   aria-expanded={false}
-                  aria-haspopup="listbox"
+                  aria-haspopup={true}
                   aria-label="Options menu"
+                  ariaHasPopup="listbox"
                   className="pf-c-options-menu__toggle"
                   disabled={false}
                   id="regular-toggle"
@@ -2852,7 +2882,7 @@ exports[`optionsMenu right aligned + open up 1`] = `
           id="rightAlignedOpenUp"
         >
           <OptionsMenuToggle
-            ariaHasPopup={true}
+            aria-haspopup={true}
             id="pf-toggle-id-3"
             isOpen={false}
             isPlain={false}
@@ -2866,8 +2896,9 @@ exports[`optionsMenu right aligned + open up 1`] = `
                 >
                   <button
                     aria-expanded="false"
-                    aria-haspopup="listbox"
+                    aria-haspopup="true"
                     aria-label="Options menu"
+                    ariahaspopup="listbox"
                     class="pf-c-options-menu__toggle"
                     id="rightAlignedOpenUp-toggle"
                     type="button"
@@ -2897,6 +2928,7 @@ exports[`optionsMenu right aligned + open up 1`] = `
           >
             <DropdownToggle
               aria-expanded={false}
+              aria-haspopup={true}
               aria-label="Options menu"
               ariaHasPopup="listbox"
               id="rightAlignedOpenUp-toggle"
@@ -2915,8 +2947,9 @@ exports[`optionsMenu right aligned + open up 1`] = `
                   >
                     <button
                       aria-expanded="false"
-                      aria-haspopup="listbox"
+                      aria-haspopup="true"
                       aria-label="Options menu"
+                      ariahaspopup="listbox"
                       class="pf-c-options-menu__toggle"
                       id="rightAlignedOpenUp-toggle"
                       type="button"
@@ -2946,6 +2979,7 @@ exports[`optionsMenu right aligned + open up 1`] = `
             >
               <Toggle
                 aria-expanded={false}
+                aria-haspopup={true}
                 aria-label="Options menu"
                 ariaHasPopup="listbox"
                 bubbleEvent={false}
@@ -2969,8 +3003,9 @@ exports[`optionsMenu right aligned + open up 1`] = `
                     >
                       <button
                         aria-expanded="false"
-                        aria-haspopup="listbox"
+                        aria-haspopup="true"
                         aria-label="Options menu"
+                        ariahaspopup="listbox"
                         class="pf-c-options-menu__toggle"
                         id="rightAlignedOpenUp-toggle"
                         type="button"
@@ -3000,8 +3035,9 @@ exports[`optionsMenu right aligned + open up 1`] = `
               >
                 <button
                   aria-expanded={false}
-                  aria-haspopup="listbox"
+                  aria-haspopup={true}
                   aria-label="Options menu"
+                  ariaHasPopup="listbox"
                   className="pf-c-options-menu__toggle"
                   disabled={false}
                   id="rightAlignedOpenUp-toggle"
@@ -3249,7 +3285,7 @@ exports[`optionsMenu right aligned 1`] = `
           id="rightAligned"
         >
           <OptionsMenuToggle
-            ariaHasPopup={true}
+            aria-haspopup={true}
             id="pf-toggle-id-1"
             isOpen={false}
             isPlain={false}
@@ -3263,8 +3299,9 @@ exports[`optionsMenu right aligned 1`] = `
                 >
                   <button
                     aria-expanded="false"
-                    aria-haspopup="listbox"
+                    aria-haspopup="true"
                     aria-label="Options menu"
+                    ariahaspopup="listbox"
                     class="pf-c-options-menu__toggle"
                     id="rightAligned-toggle"
                     type="button"
@@ -3294,6 +3331,7 @@ exports[`optionsMenu right aligned 1`] = `
           >
             <DropdownToggle
               aria-expanded={false}
+              aria-haspopup={true}
               aria-label="Options menu"
               ariaHasPopup="listbox"
               id="rightAligned-toggle"
@@ -3312,8 +3350,9 @@ exports[`optionsMenu right aligned 1`] = `
                   >
                     <button
                       aria-expanded="false"
-                      aria-haspopup="listbox"
+                      aria-haspopup="true"
                       aria-label="Options menu"
+                      ariahaspopup="listbox"
                       class="pf-c-options-menu__toggle"
                       id="rightAligned-toggle"
                       type="button"
@@ -3343,6 +3382,7 @@ exports[`optionsMenu right aligned 1`] = `
             >
               <Toggle
                 aria-expanded={false}
+                aria-haspopup={true}
                 aria-label="Options menu"
                 ariaHasPopup="listbox"
                 bubbleEvent={false}
@@ -3366,8 +3406,9 @@ exports[`optionsMenu right aligned 1`] = `
                     >
                       <button
                         aria-expanded="false"
-                        aria-haspopup="listbox"
+                        aria-haspopup="true"
                         aria-label="Options menu"
+                        ariahaspopup="listbox"
                         class="pf-c-options-menu__toggle"
                         id="rightAligned-toggle"
                         type="button"
@@ -3397,8 +3438,9 @@ exports[`optionsMenu right aligned 1`] = `
               >
                 <button
                   aria-expanded={false}
-                  aria-haspopup="listbox"
+                  aria-haspopup={true}
                   aria-label="Options menu"
+                  ariaHasPopup="listbox"
                   className="pf-c-options-menu__toggle"
                   disabled={false}
                   id="rightAligned-toggle"
@@ -3663,7 +3705,7 @@ exports[`optionsMenu text 1`] = `
           id="text"
         >
           <OptionsMenuToggleWithText
-            ariaHasPopup={true}
+            aria-haspopup={true}
             id="pf-toggle-id-6"
             isOpen={false}
             isPlain={false}
@@ -3676,6 +3718,7 @@ exports[`optionsMenu text 1`] = `
                   id="text"
                 >
                   <div
+                    aria-haspopup="true"
                     class="pf-c-options-menu__toggle pf-m-text"
                     id="pf-toggle-id-6"
                   >
@@ -3705,6 +3748,7 @@ exports[`optionsMenu text 1`] = `
             toggleText="Test"
           >
             <div
+              aria-haspopup={true}
               className="pf-c-options-menu__toggle pf-m-text"
               id="pf-toggle-id-6"
             >

@@ -601,8 +601,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                                       New
                                                     </span>
                                                     <ChipButton
+                                                      aria-label="close"
                                                       aria-labelledby="remove_pf-random-id-1 pf-random-id-1"
-                                                      ariaLabel="close"
                                                       id="remove_pf-random-id-1"
                                                       onClick={[Function]}
                                                     >
@@ -746,8 +746,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                                       Pending
                                                     </span>
                                                     <ChipButton
+                                                      aria-label="close"
                                                       aria-labelledby="remove_pf-random-id-2 pf-random-id-2"
-                                                      ariaLabel="close"
                                                       id="remove_pf-random-id-2"
                                                       onClick={[Function]}
                                                     >
@@ -1323,8 +1323,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                                       Low
                                                     </span>
                                                     <ChipButton
+                                                      aria-label="close"
                                                       aria-labelledby="remove_pf-random-id-4 pf-random-id-4"
-                                                      ariaLabel="close"
                                                       id="remove_pf-random-id-4"
                                                       onClick={[Function]}
                                                     >

@@ -19,7 +19,6 @@ exports[`OptionsMenu should match snapshot (auto-generated) 1`] = `
   }
 >
   <Component
-    ariaLabelMenu="string"
     className="''"
     direction="up"
     dropdownItems={Array []}

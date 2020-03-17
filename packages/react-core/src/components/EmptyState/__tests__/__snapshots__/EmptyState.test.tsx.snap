@@ -34,6 +34,7 @@ exports[`EmptyState Main variant regular 1`] = `
   className="pf-c-empty-state"
 >
   <Title
+    headingLevel="h3"
     size="md"
   >
     EmptyState full
@@ -46,6 +47,7 @@ exports[`EmptyState Main variant small 1`] = `
   className="pf-c-empty-state pf-m-sm"
 >
   <Title
+    headingLevel="h3"
     size="md"
   >
     EmptyState small

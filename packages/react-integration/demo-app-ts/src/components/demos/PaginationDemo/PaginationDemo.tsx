@@ -50,7 +50,7 @@ export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivEleme
   renderPagination() {
     return (
       <StackItem isFilled={false}>
-        <Title size="2xl">Pagination</Title>
+        <Title headingLevel="h2" size="2xl">Pagination</Title>
         <React.Fragment>
           <Pagination
             itemCount={523}
@@ -90,7 +90,7 @@ export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivEleme
   renderDisabled() {
     return (
       <StackItem isFilled={false}>
-        <Title size="2xl">Disabled state</Title>
+        <Title headingLevel="h2" size="2xl">Disabled state</Title>
         <React.Fragment>
           <Pagination
             itemCount={523}

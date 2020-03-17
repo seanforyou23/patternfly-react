@@ -8,7 +8,7 @@ propComponents:
 optIn: In a future breaking-change release, the modal footer buttons will default to be left aligned. You can opt into this now by setting the Modal isFooterLeftAligned prop to true.
 ---
 
-import { Modal, Button, BaseSizes, TitleLevel } from '@patternfly/react-core';
+import { Modal, Button, BaseSizes, Title, TitleLevel } from '@patternfly/react-core';
 import { WarningTriangleIcon } from '@patternfly/react-icons';
 
 ## Examples

@@ -34,7 +34,7 @@ describe('EmptyState', () => {
   test('Main variant regular', () => {
     const view = shallow(
       <EmptyState variant={EmptyStateVariant.full}>
-        <Title size={BaseSizes.md}>EmptyState full</Title>
+        <Title headingLevel="h3" size={BaseSizes.md}>EmptyState full</Title>
       </EmptyState>
     );
     expect(view).toMatchSnapshot();
@@ -43,7 +43,7 @@ describe('EmptyState', () => {
   test('Main variant small', () => {
     const view = shallow(
       <EmptyState variant={EmptyStateVariant.small}>
-        <Title size={BaseSizes.md}>EmptyState small</Title>
+        <Title headingLevel="h3" size={BaseSizes.md}>EmptyState small</Title>
       </EmptyState>
     );
     expect(view).toMatchSnapshot();

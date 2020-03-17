@@ -133,7 +133,7 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
 
     return (
       <StackItem isFilled={false}>
-        <Title size="2xl">Dropdown</Title>
+        <Title size="2xl" headingLevel="h2">Dropdown</Title>
         <Dropdown
           id="dropdown"
           onSelect={this.onSelect}
@@ -186,7 +186,7 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
 
     return (
       <StackItem isFilled={false}>
-        <Title size="2xl">Action Dropdown</Title>
+        <Title size="2xl" headingLevel="h2">Action Dropdown</Title>
         <Dropdown
           id="action-dropdown"
           onSelect={this.onActionSelect}

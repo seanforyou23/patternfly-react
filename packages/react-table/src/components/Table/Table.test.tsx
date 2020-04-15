@@ -236,6 +236,7 @@ test('Selectable table with selected expandable row', () => {
     cells: ['column'],
     rows: [
       {
+        showSelect: true,
         cells: ['one'],
         selected: true
       },

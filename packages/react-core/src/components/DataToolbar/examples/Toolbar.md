@@ -2,12 +2,12 @@
 title: 'Data toolbar'
 cssPrefix: 'pf-c-data-toolbar'
 typescript: true
-propComponents: ['DataToolbar', 'DataToolbarContent', 'DataToolbarItem', 'DataToolbarGroup', 'DataToolbarToggleGroup', 'DataToolbarFilter']
+propComponents: ['Toolbar', 'ToolbarContent', 'ToolbarItem', 'ToolbarGroup', 'ToolbarToggleGroup', 'ToolbarFilter']
 section: 'components'
 beta: true
 ---
 
-import { DataToolbar , DataToolbarItem, DataToolbarGroup, DataToolbarContent, DataToolbarToggleGroup, DataToolbarFilter } from '@patternfly/react-core';
+import { Toolbar , ToolbarItem, ToolbarGroup, ToolbarContent, ToolbarToggleGroup, ToolbarFilter } from '@patternfly/react-core';
 import { Alert, Button, ButtonVariant, InputGroup, TextInput, Select, SelectOption } from '@patternfly/react-core';
 import { EditIcon, CloneIcon, SyncIcon, SearchIcon, FilterIcon } from '@patternfly/react-icons'
 import '@patternfly/react-styles/css/components/Divider/divider';
@@ -17,41 +17,41 @@ Toolbar items are individual components that can be placed inside of a toolbar. 
 
 ```js title=Items
 import React from 'react';
-import { DataToolbar , DataToolbarItem, DataToolbarContent } from '@patternfly/react-core';
+import { Toolbar , ToolbarItem, ToolbarContent } from '@patternfly/react-core';
 import { Button, ButtonVariant, InputGroup, TextInput } from '@patternfly/react-core';
 import { SearchIcon } from '@patternfly/react-icons'
 
-class DataToolbarItems extends React.Component {
+class ToolbarItems extends React.Component {
   constructor(props) {
     super(props);
   }
 
   render() {
     const items = <React.Fragment>
-      <DataToolbarItem>
+      <ToolbarItem>
         <InputGroup>
           <TextInput name="textInput1" id="textInput1" type="search" aria-label="search input example" />
           <Button variant={ButtonVariant.control} aria-label="search button for search input">
             <SearchIcon />
           </Button>
         </InputGroup>
-      </DataToolbarItem>
-      <DataToolbarItem><Button variant="secondary">Action</Button></DataToolbarItem>
-      <DataToolbarItem variant="separator" />
-      <DataToolbarItem><Button variant="primary">Action</Button></DataToolbarItem>
+      </ToolbarItem>
+      <ToolbarItem><Button variant="secondary">Action</Button></ToolbarItem>
+      <ToolbarItem variant="separator" />
+      <ToolbarItem><Button variant="primary">Action</Button></ToolbarItem>
     </React.Fragment>;
 
-    return <DataToolbar id="data-toolbar"><DataToolbarContent>{items}</DataToolbarContent></DataToolbar>;
+    return <Toolbar id="data-toolbar"><ToolbarContent>{items}</ToolbarContent></Toolbar>;
   }
 }
 
 ```
 ```js title=Adjusting-item-spacers
 import React from 'react';
-import { DataToolbar , DataToolbarItem, DataToolbarGroup, DataToolbarContent } from '@patternfly/react-core';
+import { Toolbar , ToolbarItem, ToolbarGroup, ToolbarContent } from '@patternfly/react-core';
 import { Button } from '@patternfly/react-core';
 
-class DataToolbarSpacers extends React.Component {
+class ToolbarSpacers extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -80,21 +80,21 @@ class DataToolbarSpacers extends React.Component {
      ];
 
     const items = <React.Fragment>
-          <DataToolbarItem breakpointMods={firstSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
-          <DataToolbarItem breakpointMods={secondSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
-          <DataToolbarItem breakpointMods={thirdSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
-          <DataToolbarItem breakpointMods={fourthSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
-          <DataToolbarItem variant="separator"></DataToolbarItem>
-          <DataToolbarItem breakpointMods={fifthSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
-          <DataToolbarItem><Button variant="primary">Action</Button></DataToolbarItem>
-          <DataToolbarItem variant="separator"></DataToolbarItem>
-          <DataToolbarGroup breakpointMods={spaceItems}>
-            <DataToolbarItem><Button variant="secondary">Action</Button></DataToolbarItem>
-            <DataToolbarItem><Button variant="secondary">Action</Button></DataToolbarItem>
-          </DataToolbarGroup>
+          <ToolbarItem breakpointMods={firstSpacers}><Button variant="secondary">Action</Button></ToolbarItem>
+          <ToolbarItem breakpointMods={secondSpacers}><Button variant="secondary">Action</Button></ToolbarItem>
+          <ToolbarItem breakpointMods={thirdSpacers}><Button variant="secondary">Action</Button></ToolbarItem>
+          <ToolbarItem breakpointMods={fourthSpacers}><Button variant="secondary">Action</Button></ToolbarItem>
+          <ToolbarItem variant="separator"></ToolbarItem>
+          <ToolbarItem breakpointMods={fifthSpacers}><Button variant="secondary">Action</Button></ToolbarItem>
+          <ToolbarItem><Button variant="primary">Action</Button></ToolbarItem>
+          <ToolbarItem variant="separator"></ToolbarItem>
+          <ToolbarGroup breakpointMods={spaceItems}>
+            <ToolbarItem><Button variant="secondary">Action</Button></ToolbarItem>
+            <ToolbarItem><Button variant="secondary">Action</Button></ToolbarItem>
+          </ToolbarGroup>
       </React.Fragment>;
 
-    return <DataToolbar id="data-toolbar-spacers"><DataToolbarContent>{items}</DataToolbarContent></DataToolbar>;
+    return <Toolbar id="data-toolbar-spacers"><ToolbarContent>{items}</ToolbarContent></Toolbar>;
   }
 }
 
@@ -104,11 +104,11 @@ Often, it makes sense to group sets of like items to create desired associations
 
 ```js title=Groups
 import React from 'react';
-import { DataToolbar, DataToolbarContent, DataToolbarGroup, DataToolbarItem } from '@patternfly/react-core';
+import { Toolbar, ToolbarContent, ToolbarGroup, ToolbarItem } from '@patternfly/react-core';
 import { Button, Select, SelectOption } from '@patternfly/react-core';
 import { EditIcon, CloneIcon, SyncIcon } from '@patternfly/react-icons'
 
-class DataToolbarGroupTypes extends React.Component {
+class ToolbarGroupTypes extends React.Component {
   constructor(props) {
     super(props);
 
@@ -186,7 +186,7 @@ class DataToolbarGroupTypes extends React.Component {
     const { firstIsExpanded, firstSelected, secondIsExpanded, secondSelected, thirdIsExpanded, thirdSelected } = this.state;
 
     const filterGroupItems = <React.Fragment>
-      <DataToolbarItem>
+      <ToolbarItem>
         <Select
           variant={SelectVariant.single}
           aria-label="Select Input"
@@ -203,8 +203,8 @@ class DataToolbarGroupTypes extends React.Component {
             />
           ))}
         </Select>
-     </DataToolbarItem>
-     <DataToolbarItem>
+     </ToolbarItem>
+     <ToolbarItem>
         <Select
           variant={SelectVariant.single}
           aria-label="Select Input"
@@ -221,8 +221,8 @@ class DataToolbarGroupTypes extends React.Component {
             />
           ))}
         </Select>
-      </DataToolbarItem>
-      <DataToolbarItem>
+      </ToolbarItem>
+      <ToolbarItem>
         <Select
           variant={SelectVariant.single}
           aria-label="Select Input"
@@ -239,28 +239,28 @@ class DataToolbarGroupTypes extends React.Component {
             />
           ))}
         </Select>
-      </DataToolbarItem>
+      </ToolbarItem>
     </React.Fragment>;
 
     const iconButtonGroupItems = <React.Fragment>
-      <DataToolbarItem><Button variant="plain" aria-label="edit"><EditIcon /></Button></DataToolbarItem>
-      <DataToolbarItem><Button variant="plain" aria-label="clone"><CloneIcon /></Button></DataToolbarItem>
-      <DataToolbarItem><Button variant="plain" aria-label="sync"><SyncIcon /></Button></DataToolbarItem>
+      <ToolbarItem><Button variant="plain" aria-label="edit"><EditIcon /></Button></ToolbarItem>
+      <ToolbarItem><Button variant="plain" aria-label="clone"><CloneIcon /></Button></ToolbarItem>
+      <ToolbarItem><Button variant="plain" aria-label="sync"><SyncIcon /></Button></ToolbarItem>
     </React.Fragment>;
 
     const buttonGroupItems = <React.Fragment>
-      <DataToolbarItem><Button variant="primary">Action</Button></DataToolbarItem>
-      <DataToolbarItem><Button variant="secondary">Secondary</Button></DataToolbarItem>
-      <DataToolbarItem><Button variant="tertiary">Tertiary</Button></DataToolbarItem>
+      <ToolbarItem><Button variant="primary">Action</Button></ToolbarItem>
+      <ToolbarItem><Button variant="secondary">Secondary</Button></ToolbarItem>
+      <ToolbarItem><Button variant="tertiary">Tertiary</Button></ToolbarItem>
     </React.Fragment>;
 
     const items = <React.Fragment>
-      <DataToolbarGroup variant="filter-group">{filterGroupItems}</DataToolbarGroup>
-      <DataToolbarGroup variant="icon-button-group">{iconButtonGroupItems}</DataToolbarGroup>
-      <DataToolbarGroup variant="button-group">{buttonGroupItems}</DataToolbarGroup>
+      <ToolbarGroup variant="filter-group">{filterGroupItems}</ToolbarGroup>
+      <ToolbarGroup variant="icon-button-group">{iconButtonGroupItems}</ToolbarGroup>
+      <ToolbarGroup variant="button-group">{buttonGroupItems}</ToolbarGroup>
     </React.Fragment>;
 
-    return <DataToolbar id="data-toolbar-group-types"><DataToolbarContent>{items}</DataToolbarContent></DataToolbar>;
+    return <Toolbar id="data-toolbar-group-types"><ToolbarContent>{items}</ToolbarContent></Toolbar>;
   }
 }
 
@@ -274,11 +274,11 @@ The Toggle group can either have the toggle state managed by the consumer, or th
   - The first Toggle group example below demonstrates a component managed toggle state.
 ```js title=Component-managed-toggle-groups beta
 import React from 'react';
-import { DataToolbar , DataToolbarItem, DataToolbarContent, DataToolbarToggleGroup, DataToolbarGroup } from '@patternfly/react-core';
+import { Toolbar , ToolbarItem, ToolbarContent, ToolbarToggleGroup, ToolbarGroup } from '@patternfly/react-core';
 import { Button, ButtonVariant, InputGroup, Select, SelectOption, TextInput } from '@patternfly/react-core';
 import { SearchIcon, FilterIcon } from '@patternfly/react-icons'
 
-class DataToolbarComponentMangedToggleGroup extends React.Component {
+class ToolbarComponentMangedToggleGroup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -355,16 +355,16 @@ class DataToolbarComponentMangedToggleGroup extends React.Component {
     const { inputValue, statusIsExpanded, statusSelected, riskIsExpanded, riskSelected } = this.state;
 
     const toggleGroupItems = <React.Fragment>
-      <DataToolbarItem>
+      <ToolbarItem>
         <InputGroup>
           <TextInput name="textInput2" id="textInput2" type="search" aria-label="search input example" onChange={this.onInputChange} value={inputValue}/>
           <Button variant={ButtonVariant.control} aria-label="search button for search input">
             <SearchIcon />
           </Button>
         </InputGroup>
-      </DataToolbarItem>
-      <DataToolbarGroup variant="filter-group">
-          <DataToolbarItem>
+      </ToolbarItem>
+      <ToolbarGroup variant="filter-group">
+          <ToolbarItem>
             <Select
               variant={SelectVariant.single}
               aria-label="Select Input"
@@ -381,8 +381,8 @@ class DataToolbarComponentMangedToggleGroup extends React.Component {
                />
               ))}
             </Select>
-          </DataToolbarItem>
-          <DataToolbarItem>
+          </ToolbarItem>
+          <ToolbarItem>
             <Select
               variant={SelectVariant.single}
               aria-label="Select Input"
@@ -399,33 +399,33 @@ class DataToolbarComponentMangedToggleGroup extends React.Component {
                  />
                ))}
             </Select>
-          </DataToolbarItem>
-       </DataToolbarGroup>
+          </ToolbarItem>
+       </ToolbarGroup>
     </React.Fragment>;
 
-    const items =  <DataToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint='xl'>{toggleGroupItems}</DataToolbarToggleGroup>;
+    const items =  <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint='xl'>{toggleGroupItems}</ToolbarToggleGroup>;
 
-    return <DataToolbar id="data-toolbar-component-managed-toggle-groups" className='pf-m-toggle-group-container'>
-      <DataToolbarContent>
+    return <Toolbar id="data-toolbar-component-managed-toggle-groups" className='pf-m-toggle-group-container'>
+      <ToolbarContent>
         {items}
-      </DataToolbarContent>
-    </DataToolbar>;
+      </ToolbarContent>
+    </Toolbar>;
   }
 }
 ```
 The second Toggle group example below demonstrates a consumer managed toggle state. If the consumer would prefer to manage the expanded state of the toggle group for smaller screen widths:
-  1. Add a toggleIsExpanded callback to DataToolbar
-  2. Pass in a boolean into the isExpanded prop to DataToolbar
+  1. Add a toggleIsExpanded callback to Toolbar
+  2. Pass in a boolean into the isExpanded prop to Toolbar
 
 - Note: Although the toggle group is aware of the consumer provided breakpoint, the expandable content is not. So if the expandable content is expanded and the screen width surpasses that of the breakpoint, then the expandable content will not know that and will remain open, this case should be considered and handled by the consumer as well.
 
 ```js title=Consumer-managed-toggle-groups beta
 import React from 'react';
-import { DataToolbar , DataToolbarItem, DataToolbarContent, DataToolbarToggleGroup, DataToolbarGroup } from '@patternfly/react-core';
+import { Toolbar , ToolbarItem, ToolbarContent, ToolbarToggleGroup, ToolbarGroup } from '@patternfly/react-core';
 import { Button, ButtonVariant, InputGroup, Select, SelectOption } from '@patternfly/react-core';
 import { TextInput, SearchIcon, FilterIcon } from '@patternfly/react-icons'
 
-class DataToolbarConsumerMangedToggleGroup extends React.Component {
+class ToolbarConsumerMangedToggleGroup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -509,16 +509,16 @@ class DataToolbarConsumerMangedToggleGroup extends React.Component {
     const { isExpanded, inputValue, statusIsExpanded, statusSelected, riskIsExpanded, riskSelected } = this.state;
 
     const toggleGroupItems = <React.Fragment>
-      <DataToolbarItem>
+      <ToolbarItem>
         <InputGroup>
           <TextInput name="textInput2" id="textInput2" type="search" aria-label="search input example" onChange={this.onInputChange} value={inputValue}/>
           <Button variant={ButtonVariant.control} aria-label="search button for search input">
             <SearchIcon />
           </Button>
         </InputGroup>
-      </DataToolbarItem>
-      <DataToolbarGroup variant="filter-group">
-          <DataToolbarItem>
+      </ToolbarItem>
+      <ToolbarGroup variant="filter-group">
+          <ToolbarItem>
             <Select
               variant={SelectVariant.single}
               aria-label="Select Input"
@@ -535,8 +535,8 @@ class DataToolbarConsumerMangedToggleGroup extends React.Component {
                />
               ))}
             </Select>
-          </DataToolbarItem>
-          <DataToolbarItem>
+          </ToolbarItem>
+          <ToolbarItem>
             <Select
               variant={SelectVariant.single}
               aria-label="Select Input"
@@ -553,39 +553,39 @@ class DataToolbarConsumerMangedToggleGroup extends React.Component {
                 />
               ))}
             </Select>
-        </DataToolbarItem>
-      </DataToolbarGroup>
+        </ToolbarItem>
+      </ToolbarGroup>
     </React.Fragment>;
 
-    const items =  <DataToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint='xl'>{toggleGroupItems}</DataToolbarToggleGroup>;
+    const items =  <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint='xl'>{toggleGroupItems}</ToolbarToggleGroup>;
 
     return (
-      <DataToolbar id="data-toolbar-consumer-managed-toggle-groups"
+      <Toolbar id="data-toolbar-consumer-managed-toggle-groups"
         isExpanded={isExpanded}
         className='pf-m-toggle-group-container'
         toggleIsExpanded={this.toggleIsExpanded}
       >
-        <DataToolbarContent>
+        <ToolbarContent>
           {items}
-        </DataToolbarContent>
-      </DataToolbar>
+        </ToolbarContent>
+      </Toolbar>
     );
   }
 }
 ```
 
-The DataToolbarFilter component expects a consumer managed list of applied filters and a delete chip handler to be passed as props. Pass a deleteChipGroup prop to provide both a handler and visual styling to remove all chips in a group. Then the rendering of chips will be handled responsively by the Toolbar
+The ToolbarFilter component expects a consumer managed list of applied filters and a delete chip handler to be passed as props. Pass a deleteChipGroup prop to provide both a handler and visual styling to remove all chips in a group. Then the rendering of chips will be handled responsively by the Toolbar
 When filters are applied, the toolbar will expand in height to make space for a row of filter chips. Upon clearing the applied filters, the toolbar will collapse to its default height.
 
 ```js title=Data-toolbar-with-filters beta
 import React from 'react';
 import {
-    DataToolbar,
-    DataToolbarItem,
-    DataToolbarContent,
-    DataToolbarFilter,
-    DataToolbarToggleGroup,
-    DataToolbarGroup } from '@patternfly/react-core';
+    Toolbar,
+    ToolbarItem,
+    ToolbarContent,
+    ToolbarFilter,
+    ToolbarToggleGroup,
+    ToolbarGroup } from '@patternfly/react-core';
 import {
     Button,
     ButtonVariant,
@@ -598,7 +598,7 @@ import {
     KebabToggle } from '@patternfly/react-core';
 import { TextInput, SearchIcon, FilterIcon, EditIcon, CloneIcon, SyncIcon } from '@patternfly/react-icons'
 
-class DataToolbarWithFilterExample extends React.Component {
+class ToolbarWithFilterExample extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -731,16 +731,16 @@ class DataToolbarWithFilterExample extends React.Component {
     ];
 
     const toggleGroupItems = <React.Fragment>
-      <DataToolbarItem>
+      <ToolbarItem>
         <InputGroup>
           <TextInput name="textInput2" id="textInput2" type="search" aria-label="search input example" onChange={this.onInputChange} value={inputValue}/>
           <Button variant={ButtonVariant.control} aria-label="search button for search input">
             <SearchIcon />
           </Button>
         </InputGroup>
-      </DataToolbarItem>
-      <DataToolbarGroup variant="filter-group">
-          <DataToolbarFilter chips={filters.status} deleteChip={this.onDelete} deleteChipGroup={this.onDeleteGroup} categoryName="Status">
+      </ToolbarItem>
+      <ToolbarGroup variant="filter-group">
+          <ToolbarFilter chips={filters.status} deleteChip={this.onDelete} deleteChipGroup={this.onDeleteGroup} categoryName="Status">
             <Select
               variant={SelectVariant.checkbox}
               aria-label="Status"
@@ -752,8 +752,8 @@ class DataToolbarWithFilterExample extends React.Component {
             >
               {statusMenuItems}
             </Select>
-          </DataToolbarFilter>
-          <DataToolbarFilter chips={filters.risk} deleteChip={this.onDelete} categoryName="Risk">
+          </ToolbarFilter>
+          <ToolbarFilter chips={filters.risk} deleteChip={this.onDelete} categoryName="Risk">
             <Select
               variant={SelectVariant.checkbox}
               aria-label="Risk"
@@ -765,8 +765,8 @@ class DataToolbarWithFilterExample extends React.Component {
             >
               {riskMenuItems}
             </Select>
-          </DataToolbarFilter>
-      </DataToolbarGroup>
+          </ToolbarFilter>
+      </ToolbarGroup>
     </React.Fragment>;
 
     const dropdownItems = [
@@ -788,33 +788,33 @@ class DataToolbarWithFilterExample extends React.Component {
     ];
 
     const toolbarItems = <React.Fragment>
-      <DataToolbarToggleGroup toggleIcon={<FilterIcon />}
+      <ToolbarToggleGroup toggleIcon={<FilterIcon />}
         breakpoint='xl'>
         {toggleGroupItems}
-      </DataToolbarToggleGroup>
-      <DataToolbarGroup variant="icon-button-group">
-        <DataToolbarItem><Button variant="plain" aria-label="edit"><EditIcon /></Button></DataToolbarItem>
-        <DataToolbarItem><Button variant="plain" aria-label="clone"><CloneIcon /></Button></DataToolbarItem>
-        <DataToolbarItem><Button variant="plain" aria-label="sync"><SyncIcon /></Button></DataToolbarItem>
-      </DataToolbarGroup>
-      <DataToolbarItem>
+      </ToolbarToggleGroup>
+      <ToolbarGroup variant="icon-button-group">
+        <ToolbarItem><Button variant="plain" aria-label="edit"><EditIcon /></Button></ToolbarItem>
+        <ToolbarItem><Button variant="plain" aria-label="clone"><CloneIcon /></Button></ToolbarItem>
+        <ToolbarItem><Button variant="plain" aria-label="sync"><SyncIcon /></Button></ToolbarItem>
+      </ToolbarGroup>
+      <ToolbarItem>
         <Dropdown
           toggle={<KebabToggle onToggle={this.onKebabToggle} />}
           isOpen={kebabIsOpen}
           isPlain
           dropdownItems={dropdownItems}
         />
-      </DataToolbarItem>
+      </ToolbarItem>
     </React.Fragment>;
 
     return (
-      <DataToolbar id="data-toolbar-with-filter"
+      <Toolbar id="data-toolbar-with-filter"
         className='pf-m-toggle-group-container'
         collapseListedFiltersBreakpoint='xl'
         clearAllFilters={this.onDelete}
       >
-        <DataToolbarContent>{toolbarItems}</DataToolbarContent>
-      </DataToolbar>
+        <ToolbarContent>{toolbarItems}</ToolbarContent>
+      </Toolbar>
     );
   }
 }
@@ -825,11 +825,11 @@ There may be situations where all of the required elements simply cannot fit in 
 
 ```js title=Stacked-example beta
 import React from 'react';
-import { DataToolbar, DataToolbarContent, DataToolbarToggleGroup, DataToolbarGroup, DataToolbarItem } from '@patternfly/react-core';
+import { Toolbar, ToolbarContent, ToolbarToggleGroup, ToolbarGroup, ToolbarItem } from '@patternfly/react-core';
 import { Button, Select, SelectOption, Pagination, Dropdown, DropdownToggle, DropdownToggleCheckbox, DropdownItem } from '@patternfly/react-core';
 import { FilterIcon, CloneIcon, SyncIcon } from '@patternfly/react-icons'
 
-class DataToolbarStacked extends React.Component {
+class ToolbarStacked extends React.Component {
   constructor(props) {
     super(props);
 
@@ -948,8 +948,8 @@ class DataToolbarStacked extends React.Component {
     ];
 
     const toggleGroupItems = <React.Fragment>
-      <DataToolbarItem variant="label" id="stacked-example-resource-select">Resource</DataToolbarItem>
-      <DataToolbarItem>
+      <ToolbarItem variant="label" id="stacked-example-resource-select">Resource</ToolbarItem>
+      <ToolbarItem>
         <Select
           variant={SelectVariant.single}
           aria-label="Select Input"
@@ -967,9 +967,9 @@ class DataToolbarStacked extends React.Component {
             />
           ))}
         </Select>
-     </DataToolbarItem>
-     <DataToolbarItem variant="label" id="stacked-example-status-select">Status</DataToolbarItem>
-     <DataToolbarItem>
+     </ToolbarItem>
+     <ToolbarItem variant="label" id="stacked-example-status-select">Status</ToolbarItem>
+     <ToolbarItem>
         <Select
           variant={SelectVariant.single}
           aria-label="Select Input"
@@ -987,9 +987,9 @@ class DataToolbarStacked extends React.Component {
            />
          ))}
         </Select>
-      </DataToolbarItem>
-      <DataToolbarItem variant="label" id="stacked-example-type-select">Type</DataToolbarItem>
-      <DataToolbarItem>
+      </ToolbarItem>
+      <ToolbarItem variant="label" id="stacked-example-type-select">Type</ToolbarItem>
+      <ToolbarItem>
         <Select
           variant={SelectVariant.single}
           aria-label="Select Input"
@@ -1007,23 +1007,23 @@ class DataToolbarStacked extends React.Component {
             />
           ))}
         </Select>
-      </DataToolbarItem>
+      </ToolbarItem>
     </React.Fragment>;
 
     const iconButtonGroupItems = <React.Fragment>
-      <DataToolbarItem><Button variant="plain" aria-label="clone"><CloneIcon /></Button></DataToolbarItem>
-      <DataToolbarItem><Button variant="plain" aria-label="sync"><SyncIcon /></Button></DataToolbarItem>
+      <ToolbarItem><Button variant="plain" aria-label="clone"><CloneIcon /></Button></ToolbarItem>
+      <ToolbarItem><Button variant="plain" aria-label="sync"><SyncIcon /></Button></ToolbarItem>
     </React.Fragment>;
 
 
     const firstRowItems = <React.Fragment>
-      <DataToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint='xl'>{toggleGroupItems}</DataToolbarToggleGroup>
-      <DataToolbarGroup variant="icon-button-group">{iconButtonGroupItems}</DataToolbarGroup>
-      <DataToolbarItem variant="overflow-menu">Overflow Menu</DataToolbarItem>
+      <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint='xl'>{toggleGroupItems}</ToolbarToggleGroup>
+      <ToolbarGroup variant="icon-button-group">{iconButtonGroupItems}</ToolbarGroup>
+      <ToolbarItem variant="overflow-menu">Overflow Menu</ToolbarItem>
     </React.Fragment>;
 
     const secondRowItems = <React.Fragment>
-      <DataToolbarItem variant="bulk-select">
+      <ToolbarItem variant="bulk-select">
         <Dropdown
             onSelect={this.onSplitButtonSelect}
             toggle={(
@@ -1042,8 +1042,8 @@ class DataToolbarStacked extends React.Component {
             isOpen={splitButtonDropdownIsOpen}
             dropdownItems={splitButtonDropdownItems}
           />
-      </DataToolbarItem>
-      <DataToolbarItem variant="pagination" breakpointMods={[{modifier:"align-right"}]}>
+      </ToolbarItem>
+      <ToolbarItem variant="pagination" breakpointMods={[{modifier:"align-right"}]}>
         <Pagination
           itemCount={37}
           perPage={this.state.perPage}
@@ -1052,14 +1052,14 @@ class DataToolbarStacked extends React.Component {
           widgetId="pagination-options-menu-top"
           onPerPageSelect={this.onPerPageSelect}
         />
-      </DataToolbarItem>
+      </ToolbarItem>
     </React.Fragment>;
 
-    return <DataToolbar id="data-toolbar-group-types">
-      <DataToolbarContent className='pf-m-toggle-group-container'>{firstRowItems}</DataToolbarContent>
+    return <Toolbar id="data-toolbar-group-types">
+      <ToolbarContent className='pf-m-toggle-group-container'>{firstRowItems}</ToolbarContent>
       <hr className="pf-c-divider"/>
-      <DataToolbarContent>{secondRowItems}</DataToolbarContent>
-    </DataToolbar>;
+      <ToolbarContent>{secondRowItems}</ToolbarContent>
+    </Toolbar>;
   }
 }
 ```

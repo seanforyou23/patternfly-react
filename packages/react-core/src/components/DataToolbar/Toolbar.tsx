@@ -1,11 +1,11 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/DataToolbar/data-toolbar';
+import styles from '@patternfly/react-styles/css/components/Toolbar/data-toolbar';
 import { css } from '@patternfly/react-styles';
-import { DataToolbarContext } from './DataToolbarUtils';
-import { DataToolbarChipGroupContent } from './DataToolbarChipGroupContent';
-import { DataToolbarContentProps } from './DataToolbarContent';
+import { ToolbarContext } from './ToolbarUtils';
+import { ToolbarChipGroupContent } from './ToolbarChipGroupContent';
+import { ToolbarContentProps } from './ToolbarContent';
 
-export interface DataToolbarProps extends React.HTMLProps<HTMLDivElement> {
+export interface ToolbarProps extends React.HTMLProps<HTMLDivElement> {
   /** Optional callback for clearing all filters in the toolbar */
   clearAllFilters?: () => void;
   /** Text to display in the clear all filters button */
@@ -24,7 +24,7 @@ export interface DataToolbarProps extends React.HTMLProps<HTMLDivElement> {
   id: string;
 }
 
-export interface DataToolbarState {
+export interface ToolbarState {
   /** Flag used if the user has opted NOT to manage the 'isExpanded' state of the toggle group.
    *  Indicates whether or not the toggle group is expanded. */
   isManagedToggleExpanded: boolean;
@@ -36,11 +36,11 @@ interface FilterInfo {
   [key: string]: number;
 }
 
-export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarState> {
+export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
   private chipGroupContentRef = React.createRef<HTMLDivElement>();
   static hasWarnBeta = false;
   private staticFilterInfo = {};
-  constructor(props: DataToolbarProps) {
+  constructor(props: ToolbarProps) {
     super(props);
 
     this.state = {
@@ -67,12 +67,12 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
     if (this.isToggleManaged()) {
       window.addEventListener('resize', this.closeExpandableContent);
     }
-    if (process.env.NODE_ENV !== 'production' && !DataToolbar.hasWarnBeta) {
+    if (process.env.NODE_ENV !== 'production' && !Toolbar.hasWarnBeta) {
       // eslint-disable-next-line no-console
       console.warn(
-        'You are using a beta component (DataToolbar). These api parts are subject to change in the future.'
+        'You are using a beta component (Toolbar). These api parts are subject to change in the future.'
       );
-      DataToolbar.hasWarnBeta = true;
+      Toolbar.hasWarnBeta = true;
     }
   }
 
@@ -114,7 +114,7 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
 
     return (
       <div className={css(styles.dataToolbar, className)} id={id} {...props}>
-        <DataToolbarContext.Provider
+        <ToolbarContext.Provider
           value={{
             isExpanded: this.isToggleManaged() ? isManagedToggleExpanded : isExpanded,
             toggleIsExpanded: isToggleManaged ? this.toggleIsExpanded : toggleIsExpanded,
@@ -125,7 +125,7 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
         >
           {React.Children.map(children, (child: any) => {
             if (React.isValidElement(child)) {
-              return React.cloneElement<DataToolbarContentProps>(child, {
+              return React.cloneElement<ToolbarContentProps>(child, {
                 clearAllFilters,
                 clearFiltersButtonText,
                 showClearFiltersButton,
@@ -136,7 +136,7 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
               return child;
             }
           })}
-          <DataToolbarChipGroupContent
+          <ToolbarChipGroupContent
             isExpanded={isToggleManaged ? isManagedToggleExpanded : isExpanded}
             chipGroupContentRef={this.chipGroupContentRef}
             clearAllFilters={clearAllFilters}
@@ -145,7 +145,7 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
             numberOfFilters={numberOfFilters}
             collapseListedFiltersBreakpoint={collapseListedFiltersBreakpoint}
           />
-        </DataToolbarContext.Provider>
+        </ToolbarContext.Provider>
       </div>
     );
   }

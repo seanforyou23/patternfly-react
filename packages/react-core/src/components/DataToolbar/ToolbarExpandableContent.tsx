@@ -1,15 +1,15 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/DataToolbar/data-toolbar';
+import styles from '@patternfly/react-styles/css/components/Toolbar/data-toolbar';
 import { css } from '@patternfly/react-styles';
 
 import { RefObject } from 'react';
-import { DataToolbarGroup } from './DataToolbarGroup';
-import { DataToolbarItem } from './DataToolbarItem';
+import { ToolbarGroup } from './ToolbarGroup';
+import { ToolbarItem } from './ToolbarItem';
 import { Button } from '../../components/Button';
-import { DataToolbarContext } from './DataToolbarUtils';
+import { ToolbarContext } from './ToolbarUtils';
 import { PickOptional } from '../../helpers/typeUtils';
 
-export interface DataToolbarExpandableContentProps extends React.HTMLProps<HTMLDivElement> {
+export interface ToolbarExpandableContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Classes added to the root element of the data toolbar expandable content */
   className?: string;
   /** Flag indicating the expandable content is expanded */
@@ -26,9 +26,9 @@ export interface DataToolbarExpandableContentProps extends React.HTMLProps<HTMLD
   showClearFiltersButton: boolean;
 }
 
-export class DataToolbarExpandableContent extends React.Component<DataToolbarExpandableContentProps> {
-  static contextType: any = DataToolbarContext;
-  static defaultProps: PickOptional<DataToolbarExpandableContentProps> = {
+export class ToolbarExpandableContent extends React.Component<ToolbarExpandableContentProps> {
+  static contextType: any = ToolbarContext;
+  static defaultProps: PickOptional<ToolbarExpandableContentProps> = {
     isExpanded: false,
     clearFiltersButtonText: 'Clear all filters'
   };
@@ -53,18 +53,18 @@ export class DataToolbarExpandableContent extends React.Component<DataToolbarExp
 
     return (
       <div className={css(styles.dataToolbarExpandableContent, className)} ref={expandableContentRef} {...props}>
-        <DataToolbarGroup />
+        <ToolbarGroup />
         {numberOfFilters > 0 && (
-          <DataToolbarGroup className={styles.modifiers.chipContainer}>
-            <DataToolbarGroup ref={chipContainerRef} />
+          <ToolbarGroup className={styles.modifiers.chipContainer}>
+            <ToolbarGroup ref={chipContainerRef} />
             {showClearFiltersButton && (
-              <DataToolbarItem>
+              <ToolbarItem>
                 <Button variant="link" onClick={clearChipGroups} isInline>
                   {clearFiltersButtonText}
                 </Button>
-              </DataToolbarItem>
+              </ToolbarItem>
             )}
-          </DataToolbarGroup>
+          </ToolbarGroup>
         )}
       </div>
     );

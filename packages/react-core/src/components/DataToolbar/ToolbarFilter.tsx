@@ -1,51 +1,51 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { DataToolbarItem, DataToolbarItemProps } from './DataToolbarItem';
+import { ToolbarItem, ToolbarItemProps } from './ToolbarItem';
 import { ChipGroup, Chip, ChipGroupToolbarItem } from '../../components/ChipGroup';
-import { DataToolbarContentContext, DataToolbarContext } from './DataToolbarUtils';
+import { ToolbarContentContext, ToolbarContext } from './ToolbarUtils';
 import { PickOptional } from '../../helpers/typeUtils';
 
-export interface DataToolbarChipGroup {
+export interface ToolbarChipGroup {
   /** A unique key to identify this chip group category */
   key: string;
   /** The category name to display for the chip group */
   name: string;
 }
 
-export interface DataToolbarChip {
+export interface ToolbarChip {
   /** A unique key to identify this chip */
   key: string;
   /** The ReactNode to display in the chip */
   node: React.ReactNode;
 }
 
-export interface DataToolbarFilterProps extends DataToolbarItemProps {
+export interface ToolbarFilterProps extends ToolbarItemProps {
   /** An array of strings to be displayed as chips in the expandable content */
-  chips?: (string | DataToolbarChip)[];
+  chips?: (string | ToolbarChip)[];
   /** Callback passed by consumer used to close the entire chip group */
-  deleteChipGroup?: (category: string | DataToolbarChipGroup) => void;
+  deleteChipGroup?: (category: string | ToolbarChipGroup) => void;
   /** Callback passed by consumer used to delete a chip from the chips[] */
-  deleteChip?: (category: string | DataToolbarChipGroup, chip: DataToolbarChip | string) => void;
+  deleteChip?: (category: string | ToolbarChipGroup, chip: ToolbarChip | string) => void;
   /** Content to be rendered inside the data toolbar item associated with the chip group */
   children: React.ReactNode;
   /** Unique category name to be used as a label for the chip group */
-  categoryName: string | DataToolbarChipGroup;
+  categoryName: string | ToolbarChipGroup;
   /** Flag to show the toolbar item */
   showToolbarItem?: boolean;
 }
 
-interface DataToolbarFilterState {
+interface ToolbarFilterState {
   isMounted: boolean;
 }
 
-export class DataToolbarFilter extends React.Component<DataToolbarFilterProps, DataToolbarFilterState> {
-  static contextType: any = DataToolbarContext;
-  static defaultProps: PickOptional<DataToolbarFilterProps> = {
-    chips: [] as (string | DataToolbarChip)[],
+export class ToolbarFilter extends React.Component<ToolbarFilterProps, ToolbarFilterState> {
+  static contextType: any = ToolbarContext;
+  static defaultProps: PickOptional<ToolbarFilterProps> = {
+    chips: [] as (string | ToolbarChip)[],
     showToolbarItem: true
   };
 
-  constructor(props: DataToolbarFilterProps) {
+  constructor(props: ToolbarFilterProps) {
     super(props);
     this.state = {
       isMounted: false
@@ -67,7 +67,7 @@ export class DataToolbarFilter extends React.Component<DataToolbarFilterProps, D
     const { children, chips, deleteChipGroup, deleteChip, categoryName, showToolbarItem, ...props } = this.props;
     const { isExpanded, chipGroupContentRef } = this.context;
     const chipGroup = chips.length ? (
-      <DataToolbarItem variant="chip-group">
+      <ToolbarItem variant="chip-group">
         <ChipGroup withToolbar>
           <ChipGroupToolbarItem
             key={typeof categoryName === 'string' ? categoryName : categoryName.key}
@@ -88,27 +88,27 @@ export class DataToolbarFilter extends React.Component<DataToolbarFilterProps, D
             )}
           </ChipGroupToolbarItem>
         </ChipGroup>
-      </DataToolbarItem>
+      </ToolbarItem>
     ) : null;
 
     if (!isExpanded && this.state.isMounted) {
       return (
         <React.Fragment>
-          {showToolbarItem && <DataToolbarItem {...props}>{children}</DataToolbarItem>}
+          {showToolbarItem && <ToolbarItem {...props}>{children}</ToolbarItem>}
           {ReactDOM.createPortal(chipGroup, chipGroupContentRef.current.firstElementChild)}
         </React.Fragment>
       );
     }
 
     return (
-      <DataToolbarContentContext.Consumer>
+      <ToolbarContentContext.Consumer>
         {({ chipContainerRef }) => (
           <React.Fragment>
-            {showToolbarItem && <DataToolbarItem {...props}>{children}</DataToolbarItem>}
+            {showToolbarItem && <ToolbarItem {...props}>{children}</ToolbarItem>}
             {chipContainerRef.current && ReactDOM.createPortal(chipGroup, chipContainerRef.current)}
           </React.Fragment>
         )}
-      </DataToolbarContentContext.Consumer>
+      </ToolbarContentContext.Consumer>
     );
   }
 }

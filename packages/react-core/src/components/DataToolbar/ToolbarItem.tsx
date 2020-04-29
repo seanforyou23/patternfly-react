@@ -1,11 +1,11 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/DataToolbar/data-toolbar';
+import styles from '@patternfly/react-styles/css/components/Toolbar/data-toolbar';
 import { css } from '@patternfly/react-styles';
 
-import { DataToolbarBreakpointMod } from './DataToolbarUtils';
+import { ToolbarBreakpointMod } from './ToolbarUtils';
 import { formatBreakpointMods, toCamel } from '../../helpers/util';
 
-export enum DataToolbarItemVariant {
+export enum ToolbarItemVariant {
   separator = 'separator',
   'bulk-select' = 'bulk-select',
   'overflow-menu' = 'overflow-menu',
@@ -15,12 +15,12 @@ export enum DataToolbarItemVariant {
   'chip-group' = 'chip-group'
 }
 
-export interface DataToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
+export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
   /** Classes applied to root element of the data toolbar item */
   className?: string;
   /** TODO: Support 'separator' element as a <Divider component="div" variant="horizontal" />. A type modifier which modifies spacing specifically depending on the type of item */
   variant?:
-    | DataToolbarItemVariant
+    | ToolbarItemVariant
     | 'bulk-select'
     | 'overflow-menu'
     | 'pagination'
@@ -28,21 +28,21 @@ export interface DataToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
     | 'label'
     | 'chip-group';
   /** An array of objects representing the various modifiers to apply to the data toolbar item at various breakpoints */
-  breakpointMods?: DataToolbarBreakpointMod[];
+  breakpointMods?: ToolbarBreakpointMod[];
   /** id for this data toolbar item */
   id?: string;
   /** Content to be rendered inside the data toolbar item */
   children?: React.ReactNode;
 }
 
-export const DataToolbarItem: React.FunctionComponent<DataToolbarItemProps> = ({
+export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
   className,
   variant,
-  breakpointMods = [] as DataToolbarBreakpointMod[],
+  breakpointMods = [] as ToolbarBreakpointMod[],
   id,
   children,
   ...props
-}: DataToolbarItemProps) => (
+}: ToolbarItemProps) => (
   <div
     className={css(
       styles.dataToolbarItem,

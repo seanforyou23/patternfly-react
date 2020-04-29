@@ -3,13 +3,13 @@
  */
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import { DataToolbarContent } from '../../DataToolbarContent';
+import { ToolbarContent } from '../../ToolbarContent';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
-it('DataToolbarContent should match snapshot (auto-generated)', () => {
+it('ToolbarContent should match snapshot (auto-generated)', () => {
   const view = shallow(
-    <DataToolbarContent
+    <ToolbarContent
       className={'string'}
       breakpointMods={[]}
       children={<div>ReactNode</div>}

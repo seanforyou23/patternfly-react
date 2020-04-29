@@ -1,15 +1,15 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/DataToolbar/data-toolbar';
+import styles from '@patternfly/react-styles/css/components/Toolbar/data-toolbar';
 import { css } from '@patternfly/react-styles';
 
 import { RefObject } from 'react';
-import { DataToolbarItem } from './DataToolbarItem';
+import { ToolbarItem } from './ToolbarItem';
 import { Button } from '../../components/Button';
-import { DataToolbarGroup } from './DataToolbarGroup';
-import { globalBreakpoints } from './DataToolbarUtils';
+import { ToolbarGroup } from './ToolbarGroup';
+import { globalBreakpoints } from './ToolbarUtils';
 import { PickOptional } from '../../helpers/typeUtils';
 
-export interface DataToolbarChipGroupContentProps extends React.HTMLProps<HTMLDivElement> {
+export interface ToolbarChipGroupContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Classes applied to root element of the data toolbar content row */
   className?: string;
   /** Flag indicating if a data toolbar toggle group's expandable content is expanded */
@@ -22,14 +22,14 @@ export interface DataToolbarChipGroupContentProps extends React.HTMLProps<HTMLDi
   showClearFiltersButton: boolean;
   /** Text to display in the clear all filters button */
   clearFiltersButtonText?: string;
-  /** Total number of filters currently being applied across all DataToolbarFilter components */
+  /** Total number of filters currently being applied across all ToolbarFilter components */
   numberOfFilters: number;
   /** The breakpoint at which the listed filters in chip groups are collapsed down to a summary */
   collapseListedFiltersBreakpoint?: 'md' | 'lg' | 'xl' | '2xl';
 }
 
-export class DataToolbarChipGroupContent extends React.Component<DataToolbarChipGroupContentProps> {
-  static defaultProps: PickOptional<DataToolbarChipGroupContentProps> = {
+export class ToolbarChipGroupContent extends React.Component<ToolbarChipGroupContentProps> {
+  static defaultProps: PickOptional<ToolbarChipGroupContentProps> = {
     clearFiltersButtonText: 'Clear all filters',
     collapseListedFiltersBreakpoint: 'lg'
   };
@@ -65,22 +65,22 @@ export class DataToolbarChipGroupContent extends React.Component<DataToolbarChip
         ref={chipGroupContentRef}
         {...props}
       >
-        <DataToolbarGroup
+        <ToolbarGroup
           className={css(collapseListedFilters && styles.modifiers.hidden)}
           {...(collapseListedFilters && { hidden: true })}
           {...(collapseListedFilters && { 'aria-hidden': true })}
         />
         {collapseListedFilters && numberOfFilters > 0 && !isExpanded && (
-          <DataToolbarGroup>
-            <DataToolbarItem>{numberOfFilters} filters applied</DataToolbarItem>
-          </DataToolbarGroup>
+          <ToolbarGroup>
+            <ToolbarItem>{numberOfFilters} filters applied</ToolbarItem>
+          </ToolbarGroup>
         )}
         {showClearFiltersButton && !isExpanded && (
-          <DataToolbarItem>
+          <ToolbarItem>
             <Button variant="link" onClick={clearChipGroups} isInline>
               {clearFiltersButtonText}
             </Button>
-          </DataToolbarItem>
+          </ToolbarItem>
         )}
       </div>
     );

@@ -3,13 +3,13 @@
  */
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import { DataToolbar } from '../../DataToolbar';
+import { Toolbar } from '../../Toolbar';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
-it('DataToolbar should match snapshot (auto-generated)', () => {
+it('Toolbar should match snapshot (auto-generated)', () => {
   const view = shallow(
-    <DataToolbar
+    <Toolbar
       clearAllFilters={() => undefined as void}
       clearFiltersButtonText={'string'}
       collapseListedFiltersBreakpoint={'md'}

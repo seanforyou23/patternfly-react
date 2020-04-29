@@ -1,60 +1,60 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import { DataToolbar } from '../DataToolbar';
-import { DataToolbarContent } from '../DataToolbarContent';
-import { DataToolbarGroup } from '../DataToolbarGroup';
+import { Toolbar } from '../Toolbar';
+import { ToolbarContent } from '../ToolbarContent';
+import { ToolbarGroup } from '../ToolbarGroup';
 import CloneIcon from '@patternfly/react-icons/dist/js/icons/clone-icon';
 import EditIcon from '@patternfly/react-icons/dist/js/icons/edit-icon';
 import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 import { Button } from '../../../components/Button';
-import { DataToolbarItem } from '../DataToolbarItem';
-import { DataToolbarFilter } from '../DataToolbarFilter';
-import { DataToolbarToggleGroup } from '../DataToolbarToggleGroup';
+import { ToolbarItem } from '../ToolbarItem';
+import { ToolbarFilter } from '../ToolbarFilter';
+import { ToolbarToggleGroup } from '../ToolbarToggleGroup';
 import { Select, SelectOption, SelectVariant } from '../../../components/Select';
 
 describe('data toolbar', () => {
-  test('DataToolbarOneContent', () => {
+  test('ToolbarOneContent', () => {
     const view = mount(
-      <DataToolbar id="data-toolbar" className="DataToolbar-class">
-        <DataToolbarContent className="DataToolbarContent-class" />
-      </DataToolbar>
+      <Toolbar id="data-toolbar" className="Toolbar-class">
+        <ToolbarContent className="ToolbarContent-class" />
+      </Toolbar>
     );
     expect(view).toMatchSnapshot();
   });
 
-  test('DataToolbarTwoContent', () => {
+  test('ToolbarTwoContent', () => {
     const view = mount(
-      <DataToolbar id="data-toolbar" className="DataToolbar-class">
-        <DataToolbarContent className="DataToolbarContent-class" />
-        <DataToolbarContent className="DataToolbarContent-class" />
-      </DataToolbar>
+      <Toolbar id="data-toolbar" className="Toolbar-class">
+        <ToolbarContent className="ToolbarContent-class" />
+        <ToolbarContent className="ToolbarContent-class" />
+      </Toolbar>
     );
     expect(view).toMatchSnapshot();
   });
 
-  test('DataToolbarItemsAndGroups', () => {
+  test('ToolbarItemsAndGroups', () => {
     const view = mount(
-      <DataToolbar id="data-toolbar" className="DataToolbar-class">
-        <DataToolbarContent className="DataToolbarContent-class">
-          <DataToolbarGroup variant="icon-button-group">
-            <DataToolbarItem>
+      <Toolbar id="data-toolbar" className="Toolbar-class">
+        <ToolbarContent className="ToolbarContent-class">
+          <ToolbarGroup variant="icon-button-group">
+            <ToolbarItem>
               <Button variant="plain">
                 <EditIcon />
               </Button>
-            </DataToolbarItem>
-            <DataToolbarItem>
+            </ToolbarItem>
+            <ToolbarItem>
               <Button variant="plain">
                 <CloneIcon />
               </Button>
-            </DataToolbarItem>
-          </DataToolbarGroup>
-        </DataToolbarContent>
-      </DataToolbar>
+            </ToolbarItem>
+          </ToolbarGroup>
+        </ToolbarContent>
+      </Toolbar>
     );
     expect(view).toMatchSnapshot();
   });
 
-  test('DataToolbarToggleGroup', () => {
+  test('ToolbarToggleGroup', () => {
     const statusOptions = [{ value: 'Running', disabled: false }, { value: 'Cancelled', disabled: false }];
 
     const riskOptions = [{ value: 'Low', disabled: false }, { value: 'High', disabled: false }];
@@ -65,11 +65,11 @@ describe('data toolbar', () => {
     const onRiskSelect = () => {};
 
     const view = mount(
-      <DataToolbar id="data-toolbar" className="DataToolbar-class">
-        <DataToolbarContent className="DataToolbarContent-class">
-          <DataToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
-            <DataToolbarGroup variant="filter-group">
-              <DataToolbarItem>
+      <Toolbar id="data-toolbar" className="Toolbar-class">
+        <ToolbarContent className="ToolbarContent-class">
+          <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
+            <ToolbarGroup variant="filter-group">
+              <ToolbarItem>
                 <Select
                   variant={SelectVariant.single}
                   aria-label="Select Input"
@@ -82,8 +82,8 @@ describe('data toolbar', () => {
                     <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
                   ))}
                 </Select>
-              </DataToolbarItem>
-              <DataToolbarItem>
+              </ToolbarItem>
+              <ToolbarItem>
                 <Select
                   variant={SelectVariant.single}
                   aria-label="Select Input"
@@ -96,16 +96,16 @@ describe('data toolbar', () => {
                     <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
                   ))}
                 </Select>
-              </DataToolbarItem>
-            </DataToolbarGroup>
-          </DataToolbarToggleGroup>
-        </DataToolbarContent>
-      </DataToolbar>
+              </ToolbarItem>
+            </ToolbarGroup>
+          </ToolbarToggleGroup>
+        </ToolbarContent>
+      </Toolbar>
     );
     expect(view).toMatchSnapshot();
   });
 
-  test('DataToolbarFilter', () => {
+  test('ToolbarFilter', () => {
     const filters = {
       risk: ['Low'],
       status: ['New', 'Pending']
@@ -122,11 +122,11 @@ describe('data toolbar', () => {
     const onDelete = () => {};
 
     const view = mount(
-      <DataToolbar id="data-toolbar" className="DataToolbar-class" clearAllFilters={onDelete}>
-        <DataToolbarContent className="DataToolbarContent-class">
-          <DataToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
-            <DataToolbarGroup variant="filter-group">
-              <DataToolbarFilter chips={filters.status} deleteChip={onDelete} categoryName="Status">
+      <Toolbar id="data-toolbar" className="Toolbar-class" clearAllFilters={onDelete}>
+        <ToolbarContent className="ToolbarContent-class">
+          <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
+            <ToolbarGroup variant="filter-group">
+              <ToolbarFilter chips={filters.status} deleteChip={onDelete} categoryName="Status">
                 <Select
                   variant={SelectVariant.single}
                   aria-label="Select Input"
@@ -139,8 +139,8 @@ describe('data toolbar', () => {
                     <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
                   ))}
                 </Select>
-              </DataToolbarFilter>
-              <DataToolbarFilter chips={filters.risk} deleteChip={onDelete} categoryName="Risk">
+              </ToolbarFilter>
+              <ToolbarFilter chips={filters.risk} deleteChip={onDelete} categoryName="Risk">
                 <Select
                   variant={SelectVariant.single}
                   aria-label="Select Input"
@@ -153,11 +153,11 @@ describe('data toolbar', () => {
                     <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
                   ))}
                 </Select>
-              </DataToolbarFilter>
-            </DataToolbarGroup>
-          </DataToolbarToggleGroup>
-        </DataToolbarContent>
-      </DataToolbar>
+              </ToolbarFilter>
+            </ToolbarGroup>
+          </ToolbarToggleGroup>
+        </ToolbarContent>
+      </Toolbar>
     );
     expect(view).toMatchSnapshot();
   });

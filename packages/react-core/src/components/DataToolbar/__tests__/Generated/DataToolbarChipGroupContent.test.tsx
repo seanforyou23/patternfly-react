@@ -3,13 +3,13 @@
  */
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import { DataToolbarChipGroupContent } from '../../DataToolbarChipGroupContent';
+import { ToolbarChipGroupContent } from '../../ToolbarChipGroupContent';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
-it('DataToolbarChipGroupContent should match snapshot (auto-generated)', () => {
+it('ToolbarChipGroupContent should match snapshot (auto-generated)', () => {
   const view = shallow(
-    <DataToolbarChipGroupContent
+    <ToolbarChipGroupContent
       className={'string'}
       isExpanded={true}
       chipGroupContentRef={{ current: document.createElement('div') }}

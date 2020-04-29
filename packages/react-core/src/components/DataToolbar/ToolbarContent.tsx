@@ -1,16 +1,16 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/DataToolbar/data-toolbar';
+import styles from '@patternfly/react-styles/css/components/Toolbar/data-toolbar';
 import { css } from '@patternfly/react-styles';
 
-import { DataToolbarBreakpointMod, DataToolbarContentContext } from './DataToolbarUtils';
+import { ToolbarBreakpointMod, ToolbarContentContext } from './ToolbarUtils';
 import { formatBreakpointMods } from '../../helpers/util';
-import { DataToolbarExpandableContent } from './DataToolbarExpandableContent';
+import { ToolbarExpandableContent } from './ToolbarExpandableContent';
 
-export interface DataToolbarContentProps extends React.HTMLProps<HTMLDivElement> {
+export interface ToolbarContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Classes applied to root element of the data toolbar content row */
   className?: string;
   /** An array of objects representing the various modifiers to apply to the content row at various breakpoints */
-  breakpointMods?: DataToolbarBreakpointMod[];
+  breakpointMods?: ToolbarBreakpointMod[];
   /** Content to be rendered as children of the content row */
   children?: React.ReactNode;
   /** Flag indicating if a data toolbar toggle group's expandable content is expanded */
@@ -21,18 +21,18 @@ export interface DataToolbarContentProps extends React.HTMLProps<HTMLDivElement>
   showClearFiltersButton?: boolean;
   /** Text to display in the clear all filters button */
   clearFiltersButtonText?: string;
-  /** Id of the parent DataToolbar component */
+  /** Id of the parent Toolbar component */
   toolbarId?: string;
 }
 
-export class DataToolbarContent extends React.Component<DataToolbarContentProps> {
+export class ToolbarContent extends React.Component<ToolbarContentProps> {
   private expandableContentRef = React.createRef<HTMLDivElement>();
   private chipContainerRef = React.createRef<HTMLDivElement>();
   private static currentId = 0;
 
-  static defaultProps: DataToolbarContentProps = {
+  static defaultProps: ToolbarContentProps = {
     isExpanded: false,
-    breakpointMods: [] as DataToolbarBreakpointMod[],
+    breakpointMods: [] as ToolbarBreakpointMod[],
     showClearFiltersButton: false
   };
 
@@ -49,14 +49,14 @@ export class DataToolbarContent extends React.Component<DataToolbarContentProps>
       ...props
     } = this.props;
 
-    const expandableContentId = `${toolbarId}-expandable-content-${DataToolbarContent.currentId++}`;
+    const expandableContentId = `${toolbarId}-expandable-content-${ToolbarContent.currentId++}`;
 
     return (
       <div
         className={css(styles.dataToolbarContent, formatBreakpointMods(breakpointMods, styles), className)}
         {...props}
       >
-        <DataToolbarContentContext.Provider
+        <ToolbarContentContext.Provider
           value={{
             expandableContentRef: this.expandableContentRef,
             expandableContentId,
@@ -64,7 +64,7 @@ export class DataToolbarContent extends React.Component<DataToolbarContentProps>
           }}
         >
           <div className={css(styles.dataToolbarContentSection)}>{children}</div>
-          <DataToolbarExpandableContent
+          <ToolbarExpandableContent
             id={expandableContentId}
             isExpanded={isExpanded}
             expandableContentRef={this.expandableContentRef}
@@ -73,7 +73,7 @@ export class DataToolbarContent extends React.Component<DataToolbarContentProps>
             showClearFiltersButton={showClearFiltersButton}
             clearFiltersButtonText={clearFiltersButtonText}
           />
-        </DataToolbarContentContext.Provider>
+        </ToolbarContentContext.Provider>
       </div>
     );
   }

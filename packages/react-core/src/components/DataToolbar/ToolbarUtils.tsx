@@ -6,7 +6,7 @@ import globalBreakpointLg from '@patternfly/react-tokens/dist/js/global_breakpoi
 import globalBreakpointXl from '@patternfly/react-tokens/dist/js/global_breakpoint_xl';
 import globalBreakpoint2xl from '@patternfly/react-tokens/dist/js/global_breakpoint_2xl';
 
-interface DataToolbarContextProps {
+interface ToolbarContextProps {
   isExpanded: boolean;
   toggleIsExpanded: () => void;
   chipGroupContentRef: RefObject<HTMLDivElement>;
@@ -14,7 +14,7 @@ interface DataToolbarContextProps {
   numberOfFilters: number;
 }
 
-export const DataToolbarContext = React.createContext<Partial<DataToolbarContextProps>>({
+export const ToolbarContext = React.createContext<Partial<ToolbarContextProps>>({
   isExpanded: false,
   toggleIsExpanded: () => {},
   chipGroupContentRef: null,
@@ -22,19 +22,19 @@ export const DataToolbarContext = React.createContext<Partial<DataToolbarContext
   numberOfFilters: 0
 });
 
-interface DataToolbarContentContextProps {
+interface ToolbarContentContextProps {
   expandableContentRef: RefObject<HTMLDivElement>;
   expandableContentId: string;
   chipContainerRef: RefObject<any>;
 }
 
-export const DataToolbarContentContext = React.createContext<Partial<DataToolbarContentContextProps>>({
+export const ToolbarContentContext = React.createContext<Partial<ToolbarContentContextProps>>({
   expandableContentRef: null,
   expandableContentId: '',
   chipContainerRef: null
 });
 
-export interface DataToolbarBreakpointMod {
+export interface ToolbarBreakpointMod {
   /** The attribute to modify  */
   modifier:
     | 'hidden'

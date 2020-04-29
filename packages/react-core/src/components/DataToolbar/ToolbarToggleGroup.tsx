@@ -1,28 +1,28 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import styles from '@patternfly/react-styles/css/components/DataToolbar/data-toolbar';
+import styles from '@patternfly/react-styles/css/components/Toolbar/data-toolbar';
 import { css } from '@patternfly/react-styles';
-import { DataToolbarGroupProps } from './DataToolbarGroup';
-import { DataToolbarContext, DataToolbarContentContext } from './DataToolbarUtils';
+import { ToolbarGroupProps } from './ToolbarGroup';
+import { ToolbarContext, ToolbarContentContext } from './ToolbarUtils';
 import { Button } from '../../components/Button';
 import globalBreakpointLg from '@patternfly/react-tokens/dist/js/global_breakpoint_lg';
 
-import { DataToolbarBreakpointMod } from './DataToolbarUtils';
+import { ToolbarBreakpointMod } from './ToolbarUtils';
 import { formatBreakpointMods, capitalize, toCamel } from '../../helpers/util';
 import { PickOptional } from '../../helpers/typeUtils';
 
-export interface DataToolbarToggleGroupProps extends DataToolbarGroupProps {
+export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
   /** An icon to be rendered when the toggle group has collapsed down */
   toggleIcon: React.ReactNode;
   /** The breakpoint at which the toggle group is collapsed down */
   breakpoint: 'md' | 'lg' | 'xl';
   /** An array of objects representing the various modifiers to apply to the data toolbar toggle group at various breakpoints */
-  breakpointMods?: DataToolbarBreakpointMod[];
+  breakpointMods?: ToolbarBreakpointMod[];
 }
 
-export class DataToolbarToggleGroup extends React.Component<DataToolbarToggleGroupProps> {
-  static defaultProps: PickOptional<DataToolbarToggleGroupProps> = {
-    breakpointMods: [] as DataToolbarBreakpointMod[]
+export class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps> {
+  static defaultProps: PickOptional<ToolbarToggleGroupProps> = {
+    breakpointMods: [] as ToolbarBreakpointMod[]
   };
 
   isContentPopup = () => {
@@ -35,9 +35,9 @@ export class DataToolbarToggleGroup extends React.Component<DataToolbarToggleGro
     const { toggleIcon, breakpoint, variant, breakpointMods, className, children, ...props } = this.props;
 
     return (
-      <DataToolbarContext.Consumer>
+      <ToolbarContext.Consumer>
         {({ isExpanded, toggleIsExpanded }) => (
-          <DataToolbarContentContext.Consumer>
+          <ToolbarContentContext.Consumer>
             {({ expandableContentRef, expandableContentId }) => {
               if (expandableContentRef.current && expandableContentRef.current.classList) {
                 if (isExpanded) {
@@ -77,9 +77,9 @@ export class DataToolbarToggleGroup extends React.Component<DataToolbarToggleGro
                 </div>
               );
             }}
-          </DataToolbarContentContext.Consumer>
+          </ToolbarContentContext.Consumer>
         )}
-      </DataToolbarContext.Consumer>
+      </ToolbarContext.Consumer>
     );
   }
 }

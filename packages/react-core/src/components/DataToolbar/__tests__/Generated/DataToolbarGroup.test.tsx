@@ -3,13 +3,13 @@
  */
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import { DataToolbarGroup } from '../../DataToolbarGroup';
+import { ToolbarGroup } from '../../ToolbarGroup';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
-it('DataToolbarGroup should match snapshot (auto-generated)', () => {
+it('ToolbarGroup should match snapshot (auto-generated)', () => {
   const view = shallow(
-    <DataToolbarGroup
+    <ToolbarGroup
       className={'string'}
       variant={'filter-group'}
       breakpointMods={[]}

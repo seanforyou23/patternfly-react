@@ -3,13 +3,13 @@
  */
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import { DataToolbarExpandableContent } from '../../DataToolbarExpandableContent';
+import { ToolbarExpandableContent } from '../../ToolbarExpandableContent';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
-it('DataToolbarExpandableContent should match snapshot (auto-generated)', () => {
+it('ToolbarExpandableContent should match snapshot (auto-generated)', () => {
   const view = shallow(
-    <DataToolbarExpandableContent
+    <ToolbarExpandableContent
       className={'string'}
       isExpanded={false}
       expandableContentRef={{ current: document.createElement('div') }}

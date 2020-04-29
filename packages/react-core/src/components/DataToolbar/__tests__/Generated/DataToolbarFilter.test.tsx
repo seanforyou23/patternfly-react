@@ -3,26 +3,26 @@
  */
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import { DataToolbarFilter } from '../../DataToolbarFilter';
+import { ToolbarFilter } from '../../ToolbarFilter';
 // any missing imports can usually be resolved by adding them here
-import { DataToolbarChip } from '../..';
-import { DataToolbarContext } from '../../DataToolbarUtils';
+import { ToolbarChip } from '../..';
+import { ToolbarContext } from '../../ToolbarUtils';
 
-it('DataToolbarFilter should match snapshot (auto-generated)', () => {
+it('ToolbarFilter should match snapshot (auto-generated)', () => {
   const view = shallow(
-    <DataToolbarContext.Provider
+    <ToolbarContext.Provider
       value={{
         updateNumberFilters: () => {}
       }}
     >
-      <DataToolbarFilter
+      <ToolbarFilter
         chips={[]}
-        deleteChip={(category: string, chip: DataToolbarChip | string) => undefined as void}
+        deleteChip={(category: string, chip: ToolbarChip | string) => undefined as void}
         children={<div>ReactNode</div>}
         categoryName={'string'}
         showToolbarItem={true}
       />
-    </DataToolbarContext.Provider>
+    </ToolbarContext.Provider>
   );
   expect(view).toMatchSnapshot();
 });

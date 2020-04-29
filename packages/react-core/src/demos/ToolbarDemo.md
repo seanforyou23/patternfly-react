@@ -12,8 +12,7 @@ import {
   TextInput,
   Toolbar,
   ToolbarGroup,
-  ToolbarItem,
-  ToolbarSection
+  ToolbarItem
 } from '@patternfly/react-core';
 import { ListUlIcon, SortAlphaDownIcon, TableIcon } from '@patternfly/react-icons';
 
@@ -30,8 +29,7 @@ import {
   TextInput,
   Toolbar,
   ToolbarGroup,
-  ToolbarItem,
-  ToolbarSection
+  ToolbarItem
 } from '@patternfly/react-core';
 import { ListUlIcon, SortAlphaDownIcon, TableIcon } from '@patternfly/react-icons';
 
@@ -158,11 +156,6 @@ class ComplexToolbarDemo extends React.Component {
           </ToolbarItem>
           <ToolbarItem>{this.buildKebab()}</ToolbarItem>
         </ToolbarGroup>
-        <ToolbarSection aria-label="Toolbar Section">
-          <ToolbarGroup>
-            <ToolbarItem>17 of 80 items</ToolbarItem>
-          </ToolbarGroup>
-        </ToolbarSection>
       </Toolbar>
     );
   }

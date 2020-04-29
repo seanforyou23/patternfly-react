@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Toolbar/data-toolbar';
+import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
 
 import { ToolbarBreakpointMod, ToolbarContentContext } from './ToolbarUtils';
@@ -53,7 +53,9 @@ export class ToolbarContent extends React.Component<ToolbarContentProps> {
 
     return (
       <div
-        className={css(styles.dataToolbarContent, formatBreakpointMods(breakpointMods, styles), className)}
+        className={css(
+          // styles.toolbarContent,
+          formatBreakpointMods(breakpointMods, styles), className)}
         {...props}
       >
         <ToolbarContentContext.Provider
@@ -63,7 +65,9 @@ export class ToolbarContent extends React.Component<ToolbarContentProps> {
             chipContainerRef: this.chipContainerRef
           }}
         >
-          <div className={css(styles.dataToolbarContentSection)}>{children}</div>
+          <div className={css(
+            // styles.toolbarContentSection
+            )}>{children}</div>
           <ToolbarExpandableContent
             id={expandableContentId}
             isExpanded={isExpanded}

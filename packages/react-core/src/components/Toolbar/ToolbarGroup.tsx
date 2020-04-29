@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Toolbar/data-toolbar';
+import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
 import { ToolbarBreakpointMod } from './ToolbarUtils';
 import { formatBreakpointMods, toCamel } from '../../helpers/util';
@@ -33,8 +33,8 @@ class ToolbarGroupWithRef extends React.Component<ToolbarGroupProps> {
     return (
       <div
         className={css(
-          styles.dataToolbarGroup,
-          variant && styles.modifiers[toCamel(variant) as 'filterGroup' | 'iconButtonGroup' | 'buttonGroup'],
+          // styles.toolbarGroup,
+          // variant && styles.modifiers[toCamel(variant) as 'filterGroup' | 'iconButtonGroup' | 'buttonGroup'],
           formatBreakpointMods(breakpointMods, styles),
           className
         )}

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Toolbar/data-toolbar';
+import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
 
 import { RefObject } from 'react';
@@ -52,10 +52,16 @@ export class ToolbarExpandableContent extends React.Component<ToolbarExpandableC
     };
 
     return (
-      <div className={css(styles.dataToolbarExpandableContent, className)} ref={expandableContentRef} {...props}>
+      <div className={css(
+        // styles.toolbarExpandableContent,
+        className
+        )} ref={expandableContentRef} {...props}>
         <ToolbarGroup />
         {numberOfFilters > 0 && (
-          <ToolbarGroup className={styles.modifiers.chipContainer}>
+          <ToolbarGroup className={
+            // styles.modifiers.chipContainer
+            ''
+            }>
             <ToolbarGroup ref={chipContainerRef} />
             {showClearFiltersButton && (
               <ToolbarItem>

@@ -1,12 +1,12 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import styles from '@patternfly/react-styles/css/components/Toolbar/data-toolbar';
+import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
 import { ToolbarGroupProps } from './ToolbarGroup';
 import { ToolbarContext, ToolbarContentContext } from './ToolbarUtils';
 import { Button } from '../../components/Button';
 import globalBreakpointLg from '@patternfly/react-tokens/dist/js/global_breakpoint_lg';
-
+console.log(styles);
 import { ToolbarBreakpointMod } from './ToolbarUtils';
 import { formatBreakpointMods, capitalize, toCamel } from '../../helpers/util';
 import { PickOptional } from '../../helpers/typeUtils';
@@ -50,16 +50,19 @@ export class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps>
               return (
                 <div
                   className={css(
-                    styles.dataToolbarGroup,
-                    variant && styles.modifiers[toCamel(variant) as 'filterGroup' | 'iconButtonGroup' | 'buttonGroup'],
+                    // styles.toolbarGroup,
+                    // variant && styles.modifiers[toCamel(variant) as 'filterGroup' | 'iconButtonGroup' | 'buttonGroup'],
                     formatBreakpointMods(breakpointMods, styles),
-                    styles.modifiers.toggleGroup,
-                    styles.modifiers[`showOn${capitalize(breakpoint)}` as 'showOnMd' | 'showOnLg' | 'showOnXl'],
+                    // styles.modifiers.toggleGroup,
+                    // styles.modifiers[`showOn${capitalize(breakpoint)}` as 'showOnMd' | 'showOnLg' | 'showOnXl'],
                     className
                   )}
                   {...props}
                 >
-                  <div className={css(styles.dataToolbarToggle)}>
+                  <div className={
+                    // css(styles.toolbarToggle)
+                    ''
+                    }>
                     <Button
                       variant="plain"
                       onClick={toggleIsExpanded}

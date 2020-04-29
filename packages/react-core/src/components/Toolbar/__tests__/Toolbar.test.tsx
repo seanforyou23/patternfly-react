@@ -15,7 +15,7 @@ import { Select, SelectOption, SelectVariant } from '../../../components/Select'
 describe('data toolbar', () => {
   test('ToolbarOneContent', () => {
     const view = mount(
-      <Toolbar id="data-toolbar" className="Toolbar-class">
+      <Toolbar id="toolbar" className="Toolbar-class">
         <ToolbarContent className="ToolbarContent-class" />
       </Toolbar>
     );
@@ -24,7 +24,7 @@ describe('data toolbar', () => {
 
   test('ToolbarTwoContent', () => {
     const view = mount(
-      <Toolbar id="data-toolbar" className="Toolbar-class">
+      <Toolbar id="toolbar" className="Toolbar-class">
         <ToolbarContent className="ToolbarContent-class" />
         <ToolbarContent className="ToolbarContent-class" />
       </Toolbar>
@@ -34,7 +34,7 @@ describe('data toolbar', () => {
 
   test('ToolbarItemsAndGroups', () => {
     const view = mount(
-      <Toolbar id="data-toolbar" className="Toolbar-class">
+      <Toolbar id="toolbar" className="Toolbar-class">
         <ToolbarContent className="ToolbarContent-class">
           <ToolbarGroup variant="icon-button-group">
             <ToolbarItem>
@@ -65,7 +65,7 @@ describe('data toolbar', () => {
     const onRiskSelect = () => {};
 
     const view = mount(
-      <Toolbar id="data-toolbar" className="Toolbar-class">
+      <Toolbar id="toolbar" className="Toolbar-class">
         <ToolbarContent className="ToolbarContent-class">
           <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
             <ToolbarGroup variant="filter-group">
@@ -75,8 +75,7 @@ describe('data toolbar', () => {
                   aria-label="Select Input"
                   onToggle={onStatusToggle}
                   onSelect={onStatusSelect}
-                  selections="Running"
-                  isExpanded={false}
+                  selections={['Running']}
                 >
                   {statusOptions.map((option, index) => (
                     <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
@@ -89,8 +88,7 @@ describe('data toolbar', () => {
                   aria-label="Select Input"
                   onToggle={onRiskToggle}
                   onSelect={onRiskSelect}
-                  selections="Low"
-                  isExpanded={false}
+                  selections={['Low']}
                 >
                   {riskOptions.map((option, index) => (
                     <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
@@ -122,7 +120,7 @@ describe('data toolbar', () => {
     const onDelete = () => {};
 
     const view = mount(
-      <Toolbar id="data-toolbar" className="Toolbar-class" clearAllFilters={onDelete}>
+      <Toolbar id="toolbar" className="Toolbar-class" clearAllFilters={onDelete}>
         <ToolbarContent className="ToolbarContent-class">
           <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
             <ToolbarGroup variant="filter-group">
@@ -132,8 +130,7 @@ describe('data toolbar', () => {
                   aria-label="Select Input"
                   onToggle={onStatusToggle}
                   onSelect={onStatusSelect}
-                  selections="Running"
-                  isExpanded={false}
+                  selections={['Running']}
                 >
                   {statusOptions.map((option, index) => (
                     <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
@@ -146,8 +143,7 @@ describe('data toolbar', () => {
                   aria-label="Select Input"
                   onToggle={onRiskToggle}
                   onSelect={onRiskSelect}
-                  selections="Low"
-                  isExpanded={false}
+                  selections={['Low']}
                 >
                   {riskOptions.map((option, index) => (
                     <SelectOption isDisabled={option.disabled} key={index} value={option.value} />

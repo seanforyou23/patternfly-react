@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Toolbar/data-toolbar';
+import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
 import { ToolbarContext } from './ToolbarUtils';
 import { ToolbarChipGroupContent } from './ToolbarChipGroupContent';
@@ -113,7 +113,7 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
     const showClearFiltersButton = numberOfFilters > 0;
 
     return (
-      <div className={css(styles.dataToolbar, className)} id={id} {...props}>
+      <div className={css(styles.toolbar, className)} id={id} {...props}>
         <ToolbarContext.Provider
           value={{
             isExpanded: this.isToggleManaged() ? isManagedToggleExpanded : isExpanded,

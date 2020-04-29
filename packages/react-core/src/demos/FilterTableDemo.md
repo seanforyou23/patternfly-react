@@ -315,7 +315,7 @@ class FilterTableDemo extends React.Component {
     const { filters } = this.state;
     return (
       <Toolbar
-        id="data-toolbar-with-chip-groups"
+        id="toolbar-with-chip-groups"
         clearAllFilters={this.onDelete}
         collapseListedFiltersBreakpoint="xl"
       >

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Toolbar/data-toolbar';
+import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
 
 import { RefObject } from 'react';
@@ -57,8 +57,8 @@ export class ToolbarChipGroupContent extends React.Component<ToolbarChipGroupCon
     return (
       <div
         className={css(
-          styles.dataToolbarContent,
-          (numberOfFilters === 0 || isExpanded) && styles.modifiers.hidden,
+          // styles.toolbarContent,
+          // (numberOfFilters === 0 || isExpanded) && styles.modifiers.hidden,
           className
         )}
         {...((numberOfFilters === 0 || isExpanded) && { hidden: true })}
@@ -66,7 +66,9 @@ export class ToolbarChipGroupContent extends React.Component<ToolbarChipGroupCon
         {...props}
       >
         <ToolbarGroup
-          className={css(collapseListedFilters && styles.modifiers.hidden)}
+          className={css(
+            // collapseListedFilters && styles.modifiers.hidden
+            )}
           {...(collapseListedFilters && { hidden: true })}
           {...(collapseListedFilters && { 'aria-hidden': true })}
         />

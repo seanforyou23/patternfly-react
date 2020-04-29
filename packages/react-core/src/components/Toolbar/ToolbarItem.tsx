@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Toolbar/data-toolbar';
+import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
 
 import { ToolbarBreakpointMod } from './ToolbarUtils';
@@ -45,11 +45,11 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
 }: ToolbarItemProps) => (
   <div
     className={css(
-      styles.dataToolbarItem,
-      variant &&
-        styles.modifiers[
-          toCamel(variant) as 'bulkSelect' | 'overflowMenu' | 'pagination' | 'searchFilter' | 'label' | 'chipGroup'
-        ],
+      // styles.toolbarItem,
+      // variant &&
+      //   styles.modifiers[
+      //     toCamel(variant) as 'bulkSelect' | 'overflowMenu' | 'pagination' | 'searchFilter' | 'label' | 'chipGroup'
+      //   ],
       formatBreakpointMods(breakpointMods, styles),
       className
     )}

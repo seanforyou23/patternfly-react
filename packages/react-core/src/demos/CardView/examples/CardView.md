@@ -710,7 +710,7 @@ class CardViewBasic extends React.Component {
               <Text component="h1">Projects</Text>
               <Text component="p">This is a demo that showcases Patternfly Cards.</Text>
             </TextContent>
-            <Toolbar id="data-toolbar-group-types" clearAllFilters={this.onDelete}>
+            <Toolbar id="toolbar-group-types" clearAllFilters={this.onDelete}>
               <ToolbarContent>{toolbarItems}</ToolbarContent>
             </Toolbar>
           </PageSection>

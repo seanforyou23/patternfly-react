@@ -1,6 +1,6 @@
 ---
 title: 'Data toolbar'
-cssPrefix: 'pf-c-data-toolbar'
+cssPrefix: 'pf-c-toolbar'
 typescript: true
 propComponents: ['Toolbar', 'ToolbarContent', 'ToolbarItem', 'ToolbarGroup', 'ToolbarToggleGroup', 'ToolbarFilter']
 section: 'components'
@@ -41,7 +41,7 @@ class ToolbarItems extends React.Component {
       <ToolbarItem><Button variant="primary">Action</Button></ToolbarItem>
     </React.Fragment>;
 
-    return <Toolbar id="data-toolbar"><ToolbarContent>{items}</ToolbarContent></Toolbar>;
+    return <Toolbar id="toolbar"><ToolbarContent>{items}</ToolbarContent></Toolbar>;
   }
 }
 
@@ -94,7 +94,7 @@ class ToolbarSpacers extends React.Component {
           </ToolbarGroup>
       </React.Fragment>;
 
-    return <Toolbar id="data-toolbar-spacers"><ToolbarContent>{items}</ToolbarContent></Toolbar>;
+    return <Toolbar id="toolbar-spacers"><ToolbarContent>{items}</ToolbarContent></Toolbar>;
   }
 }
 
@@ -260,7 +260,7 @@ class ToolbarGroupTypes extends React.Component {
       <ToolbarGroup variant="button-group">{buttonGroupItems}</ToolbarGroup>
     </React.Fragment>;
 
-    return <Toolbar id="data-toolbar-group-types"><ToolbarContent>{items}</ToolbarContent></Toolbar>;
+    return <Toolbar id="toolbar-group-types"><ToolbarContent>{items}</ToolbarContent></Toolbar>;
   }
 }
 
@@ -405,7 +405,7 @@ class ToolbarComponentMangedToggleGroup extends React.Component {
 
     const items =  <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint='xl'>{toggleGroupItems}</ToolbarToggleGroup>;
 
-    return <Toolbar id="data-toolbar-component-managed-toggle-groups" className='pf-m-toggle-group-container'>
+    return <Toolbar id="toolbar-component-managed-toggle-groups" className='pf-m-toggle-group-container'>
       <ToolbarContent>
         {items}
       </ToolbarContent>
@@ -560,7 +560,7 @@ class ToolbarConsumerMangedToggleGroup extends React.Component {
     const items =  <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint='xl'>{toggleGroupItems}</ToolbarToggleGroup>;
 
     return (
-      <Toolbar id="data-toolbar-consumer-managed-toggle-groups"
+      <Toolbar id="toolbar-consumer-managed-toggle-groups"
         isExpanded={isExpanded}
         className='pf-m-toggle-group-container'
         toggleIsExpanded={this.toggleIsExpanded}
@@ -808,7 +808,7 @@ class ToolbarWithFilterExample extends React.Component {
     </React.Fragment>;
 
     return (
-      <Toolbar id="data-toolbar-with-filter"
+      <Toolbar id="toolbar-with-filter"
         className='pf-m-toggle-group-container'
         collapseListedFiltersBreakpoint='xl'
         clearAllFilters={this.onDelete}
@@ -1055,7 +1055,7 @@ class ToolbarStacked extends React.Component {
       </ToolbarItem>
     </React.Fragment>;
 
-    return <Toolbar id="data-toolbar-group-types">
+    return <Toolbar id="toolbar-group-types">
       <ToolbarContent className='pf-m-toggle-group-container'>{firstRowItems}</ToolbarContent>
       <hr className="pf-c-divider"/>
       <ToolbarContent>{secondRowItems}</ToolbarContent>

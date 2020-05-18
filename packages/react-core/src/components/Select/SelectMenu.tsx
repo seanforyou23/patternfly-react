@@ -77,7 +77,7 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
         ? selected && (Array.isArray(selected) && selected.includes(child.props.value))
         : selected === child.props.value;
     return React.cloneElement(child, {
-      id: `${child.props.value ? child.props.value.toString() : ''}-${index}`,
+      id: `${child.props.id || (child.props.value ? child.props.value.toString() : '')}-${index}`,
       isSelected,
       sendRef,
       keyHandler,

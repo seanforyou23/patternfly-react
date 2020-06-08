@@ -3,7 +3,7 @@ title: 'Table'
 cssPrefix: 'pf-c-table'
 section: 'components'
 typescript: true
-propComponents: ['Table', 'TableHeader', 'TableBody', 'EditableTableCell', 'EditableSelectInputCell']
+propComponents: ['Table', 'TableHeader', 'TableBody', 'EditableSelectInputCell']
 ---
 
 Note: Table lives in its own package at [@patternfly/react-table](https://www.npmjs.com/package/@patternfly/react-table)!
@@ -1454,10 +1454,10 @@ class EditableRowsTable extends React.Component {
                 />
               ),
               props: {
-                value: ['Option 1'],
+                value: 'Option 1',
                 name: 'uniqueIdRow1Cell4',
                 isSelectOpen: props.isSelectOpen || false,
-                selected: props.selected || ['Option 1'],
+                selected: props.selected || [],
                 options: [
                   {value: 'Placeholder...', isPlaceholder: true},
                   {value: 'Option 1'},
@@ -1465,7 +1465,10 @@ class EditableRowsTable extends React.Component {
                   {value: 'Option 3'},
                   {value: 'Option 4'},
                   {value: 'Option 5'}
-                ]
+                ],
+                editableSelectProps: {
+                  variant: 'single'
+                }
               }
             },
           ]
@@ -1544,7 +1547,7 @@ class EditableRowsTable extends React.Component {
                   />
               ),
               props: {
-                value: [],
+                value: ['Placeholder...'],
                 name: 'uniqueIdRow2Cell4',
                 isSelectOpen: props.isSelectOpen || false,
                 selected: props.selected || [],
@@ -1555,7 +1558,10 @@ class EditableRowsTable extends React.Component {
                   {value: 'Option 3'},
                   {value: 'Option 4'},
                   {value: 'Option 5'}
-                ]
+                ],
+                editableSelectProps: {
+                  variant: 'typeaheadmulti'
+                }
               }
             },
           ]
@@ -1665,7 +1671,10 @@ class EditableRowsTable extends React.Component {
                   {value: 'Option 3'},
                   {value: 'Option 4'},
                   {value: 'Option 5'}
-                ]
+                ],
+                editableSelectProps: {
+                  variant: 'typeaheadmulti'
+                }
               }
             }
           ]
@@ -1704,6 +1713,7 @@ class EditableRowsTable extends React.Component {
     this.onSelect = (newValue, evt, rowIndex, cellIndex, isPlaceholder) => {
       const newRows = Array.from(this.state.rows);
       const newCellProps = newRows[rowIndex].cells[cellIndex].props;
+
       if (isPlaceholder) {
         newCellProps.editableValue = [''];
         newCellProps.selected = [''];
@@ -1714,10 +1724,18 @@ class EditableRowsTable extends React.Component {
 
         let newSelected = Array.from(newCellProps.selected);
 
-        if (!newSelected.includes(newValue)) {
-          newSelected.push(newValue);
-        } else {
-          newSelected = newSelected.filter(el => el !== newValue);
+        switch (newCellProps.editableSelectProps.variant) {
+          case 'typeaheadmulti': {
+            if (!newSelected.includes(newValue)) {
+              newSelected.push(newValue);
+            } else {
+              newSelected = newSelected.filter(el => el !== newValue);
+            }
+            break;
+          }
+          default: {
+            newSelected = newValue;
+          }
         }
 
         newCellProps.editableValue = newSelected;
